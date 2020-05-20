@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Data and data management | Learn Statistics with Public Use Microdata</title>
+  <meta name="description" content="Introductory Statistics and Data Science" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Data and data management | Learn Statistics with Public Use Microdata" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Introductory Statistics and Data Science" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Data and data management | Learn Statistics with Public Use Microdata" />
+  
+  <meta name="twitter:description" content="Introductory Statistics and Data Science" />
+  
+
+<meta name="author" content="Emmanuel A. Garcia" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="preliminaries.html"/>
+<link rel="next" href="describing-distributions-of-variables.html"/>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="preliminaries.html"><a href="preliminaries.html"><i class="fa fa-check"></i><b>1</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="preliminaries.html"><a href="preliminaries.html#stages-of-the-statistical-process"><i class="fa fa-check"></i><b>1.1</b> Stages of the statistical process</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="preliminaries.html"><a href="preliminaries.html#formulating-research-questions"><i class="fa fa-check"></i><b>1.1.1</b> Formulating Research Questions</a></li>
+<li class="chapter" data-level="1.1.2" data-path="preliminaries.html"><a href="preliminaries.html#collecting-data"><i class="fa fa-check"></i><b>1.1.2</b> Collecting Data</a></li>
+<li class="chapter" data-level="1.1.3" data-path="preliminaries.html"><a href="preliminaries.html#analysis"><i class="fa fa-check"></i><b>1.1.3</b> Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="preliminaries.html"><a href="preliminaries.html#public-use-microdata"><i class="fa fa-check"></i><b>1.2</b> Public Use Microdata</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="preliminaries.html"><a href="preliminaries.html#acs"><i class="fa fa-check"></i><b>1.2.1</b> ACS</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="preliminaries.html"><a href="preliminaries.html#using-r"><i class="fa fa-check"></i><b>1.3</b> Using R</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-and-data-management.html"><a href="data-and-data-management.html"><i class="fa fa-check"></i><b>2</b> Data and data management</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="data-and-data-management.html"><a href="data-and-data-management.html#first-stepload-packages"><i class="fa fa-check"></i><b>2.1</b> First step–load packages</a></li>
+<li class="chapter" data-level="2.2" data-path="data-and-data-management.html"><a href="data-and-data-management.html#second-stepload-data"><i class="fa fa-check"></i><b>2.2</b> Second step–load data</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="data-and-data-management.html"><a href="data-and-data-management.html#viewing-data"><i class="fa fa-check"></i><b>2.2.1</b> Viewing data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="data-and-data-management.html"><a href="data-and-data-management.html#cleaning-data"><i class="fa fa-check"></i><b>2.3</b> Cleaning data</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="data-and-data-management.html"><a href="data-and-data-management.html#the-pipe"><i class="fa fa-check"></i><b>2.3.1</b> The Pipe</a></li>
+<li class="chapter" data-level="2.3.2" data-path="data-and-data-management.html"><a href="data-and-data-management.html#looking-at-one-variable"><i class="fa fa-check"></i><b>2.3.2</b> Looking at one variable</a></li>
+<li class="chapter" data-level="2.3.3" data-path="data-and-data-management.html"><a href="data-and-data-management.html#types-of-variables"><i class="fa fa-check"></i><b>2.3.3</b> Types of variables</a></li>
+<li class="chapter" data-level="2.3.4" data-path="data-and-data-management.html"><a href="data-and-data-management.html#mutate"><i class="fa fa-check"></i><b>2.3.4</b> Mutate</a></li>
+<li class="chapter" data-level="2.3.5" data-path="data-and-data-management.html"><a href="data-and-data-management.html#recode"><i class="fa fa-check"></i><b>2.3.5</b> Recode</a></li>
+<li class="chapter" data-level="2.3.6" data-path="data-and-data-management.html"><a href="data-and-data-management.html#putting-it-all-together-with-several-variables"><i class="fa fa-check"></i><b>2.3.6</b> Putting it all together with several variables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="data-and-data-management.html"><a href="data-and-data-management.html#saving-your-clean-data-to-a-file"><i class="fa fa-check"></i><b>2.4</b> Saving your clean data to a file</a></li>
+<li class="chapter" data-level="2.5" data-path="data-and-data-management.html"><a href="data-and-data-management.html#filtering-rows"><i class="fa fa-check"></i><b>2.5</b> Filtering rows</a></li>
+<li class="chapter" data-level="2.6" data-path="data-and-data-management.html"><a href="data-and-data-management.html#counting-and-summarizing"><i class="fa fa-check"></i><b>2.6</b> Counting and Summarizing</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="data-and-data-management.html"><a href="data-and-data-management.html#categorical"><i class="fa fa-check"></i><b>2.6.1</b> Categorical</a></li>
+<li class="chapter" data-level="2.6.2" data-path="data-and-data-management.html"><a href="data-and-data-management.html#numeric"><i class="fa fa-check"></i><b>2.6.2</b> Numeric</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="describing-distributions-of-variables.html"><a href="describing-distributions-of-variables.html"><i class="fa fa-check"></i><b>3</b> Describing distributions of variables</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="describing-distributions-of-variables.html"><a href="describing-distributions-of-variables.html#categorical-variables"><i class="fa fa-check"></i><b>3.1</b> Categorical Variables</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="describing-distributions-of-variables.html"><a href="describing-distributions-of-variables.html#graphs"><i class="fa fa-check"></i><b>3.1.1</b> Graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="describing-distributions-of-variables.html"><a href="describing-distributions-of-variables.html#numeric-variables"><i class="fa fa-check"></i><b>3.2</b> Numeric variables</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="describing-distributions-of-variables.html"><a href="describing-distributions-of-variables.html#shape"><i class="fa fa-check"></i><b>3.2.1</b> Shape</a></li>
+<li class="chapter" data-level="3.2.2" data-path="describing-distributions-of-variables.html"><a href="describing-distributions-of-variables.html#outliers"><i class="fa fa-check"></i><b>3.2.2</b> Outliers</a></li>
+<li class="chapter" data-level="3.2.3" data-path="describing-distributions-of-variables.html"><a href="describing-distributions-of-variables.html#center-and-spread"><i class="fa fa-check"></i><b>3.2.3</b> Center and Spread</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html"><i class="fa fa-check"></i><b>4</b> Relationships between variables</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#falsifiability-1"><i class="fa fa-check"></i><b>4.1</b> Falsifiability</a></li>
+<li class="chapter" data-level="4.2" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#two-categorical-variables"><i class="fa fa-check"></i><b>4.2</b> Two categorical variables</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#row-and-column-percentages"><i class="fa fa-check"></i><b>4.2.1</b> Row and Column Percentages</a></li>
+<li class="chapter" data-level="4.2.2" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#graphing-bar-plot"><i class="fa fa-check"></i><b>4.2.2</b> Graphing – Bar Plot</a></li>
+<li class="chapter" data-level="4.2.3" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#an-example-with-a-hypothesis"><i class="fa fa-check"></i><b>4.2.3</b> An Example with a Hypothesis</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#numeric-and-categorical-variable"><i class="fa fa-check"></i><b>4.3</b> Numeric and Categorical Variable</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#another-example"><i class="fa fa-check"></i><b>4.3.1</b> Another Example</a></li>
+<li class="chapter" data-level="4.3.2" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#another"><i class="fa fa-check"></i><b>4.3.2</b> Another</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#two-numeric-variables"><i class="fa fa-check"></i><b>4.4</b> Two Numeric Variables</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#homeowners"><i class="fa fa-check"></i><b>4.4.1</b> Homeowners</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="inference.html"><a href="inference.html"><i class="fa fa-check"></i><b>5</b> Inference</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="inference.html"><a href="inference.html#sample-distribution"><i class="fa fa-check"></i><b>5.1</b> Sample Distribution</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="inference.html"><a href="inference.html#simulating-the-sample-distribution"><i class="fa fa-check"></i><b>5.1.1</b> Simulating the sample distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="inference.html"><a href="inference.html#normal-distribution"><i class="fa fa-check"></i><b>5.2</b> Normal Distribution</a></li>
+<li class="chapter" data-level="5.3" data-path="inference.html"><a href="inference.html#confidence-intervals"><i class="fa fa-check"></i><b>5.3</b> Confidence Intervals</a></li>
+<li class="chapter" data-level="5.4" data-path="inference.html"><a href="inference.html#old-version"><i class="fa fa-check"></i><b>5.4</b> OLD VERSION</a></li>
+<li class="chapter" data-level="5.5" data-path="inference.html"><a href="inference.html#corona-virus"><i class="fa fa-check"></i><b>5.5</b> Corona Virus</a></li>
+<li class="chapter" data-level="5.6" data-path="inference.html"><a href="inference.html#sample-distribution-1"><i class="fa fa-check"></i><b>5.6</b> Sample Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>6</b> Regression</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="regression.html"><a href="regression.html#simple-linear-regression"><i class="fa fa-check"></i><b>6.1</b> Simple Linear Regression</a></li>
+<li class="chapter" data-level="6.2" data-path="regression.html"><a href="regression.html#multiple-regression"><i class="fa fa-check"></i><b>6.2</b> Multiple Regression</a></li>
+<li class="chapter" data-level="6.3" data-path="regression.html"><a href="regression.html#logistic-regression"><i class="fa fa-check"></i><b>6.3</b> Logistic Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="tests-of-independence.html"><a href="tests-of-independence.html"><i class="fa fa-check"></i><b>7</b> Tests of Independence</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Learn Statistics with Public Use Microdata</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-and-data-management" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Data and data management</h1>
+<p>This chapter covers how to get your hands on actual public microdata from the Census. I’ll be using 2018 ACS data for Alameda and Santa Clara county<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> residents for almost all examples in this book.</p>
+<div id="first-stepload-packages" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> First step–load packages</h2>
+<p>The <code>R</code> programming is wonderful but it’s not perfect. There are addon packages/libraries. Games sometimes call them extension packs. There are two packages we always need to load <code>dplyr</code> and <code>janitor</code>. We will learn about more later but we only need these two for now. Load them with the command below. To load the libraries, copy the command below into an RMarkdown file. You will always start an analysis with loading libraries.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="data-and-data-management.html#cb2-1"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb2-2"><a href="data-and-data-management.html#cb2-2"></a><span class="kw">library</span>(janitor)</span></code></pre></div>
+</div>
+<div id="second-stepload-data" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Second step–load data</h2>
+<p>The data is loaded using the <code>load</code> command.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="data-and-data-management.html#cb3-1"></a><span class="kw">load</span>(<span class="st">&quot;~/Data/ACS2018_ASC_raw.RData&quot;</span>)</span></code></pre></div>
+<p>Yay, the data is loaded. Now you need to find out what exactly we loaded. You can find the data available to you with the <code>ls</code> command.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="data-and-data-management.html#cb4-1"></a><span class="kw">ls</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;ACS2018_ASC_raw&quot;</code></pre>
+<p>Apparently the data is saved with the name <code>ACS2018_ASC_raw</code>.</p>
+<div id="viewing-data" class="section level3" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Viewing data</h3>
+<p>After you’ve loaded the data. You probably want to see what the data contains. The easiest way is to just type the name of the data you want to see.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="data-and-data-management.html#cb6-1"></a>ACS2018_ASC_raw</span></code></pre></div>
+<pre><code>## # A tibble: 35,638 x 512
+##    SERIALNO DIVISION SPORDER PUMA  REGION ST    ADJINC PWGTP  AGEP   CIT CITWP
+##    &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1 2018GQ0…        9 01      00101      4 06    1.01e6    48    19     5    NA
+##  2 2018GQ0…        9 01      00106      4 06    1.01e6    52    21     1    NA
+##  3 2018GQ0…        9 01      08507      4 06    1.01e6    33    65     1    NA
+##  4 2018GQ0…        9 01      00103      4 06    1.01e6    20    23     1    NA
+##  5 2018GQ0…        9 01      00106      4 06    1.01e6     9    48     1    NA
+##  6 2018GQ0…        9 01      08512      4 06    1.01e6    14    89     4  1995
+##  7 2018GQ0…        9 01      08509      4 06    1.01e6    79    18     1    NA
+##  8 2018GQ0…        9 01      08509      4 06    1.01e6    66    22     1    NA
+##  9 2018GQ0…        9 01      00101      4 06    1.01e6    59    94     1    NA
+## 10 2018GQ0…        9 01      08504      4 06    1.01e6    83    36     1    NA
+## # … with 35,628 more rows, and 501 more variables: COW &lt;dbl&gt;, DDRS &lt;dbl&gt;,
+## #   DEAR &lt;dbl&gt;, DEYE &lt;dbl&gt;, DOUT &lt;dbl&gt;, DPHY &lt;dbl&gt;, DRAT &lt;dbl&gt;, DRATX &lt;dbl&gt;,
+## #   DREM &lt;dbl&gt;, ENG &lt;dbl&gt;, FER &lt;dbl&gt;, GCL &lt;dbl&gt;, GCM &lt;chr&gt;, GCR &lt;chr&gt;,
+## #   HINS1 &lt;dbl&gt;, HINS2 &lt;dbl&gt;, HINS3 &lt;dbl&gt;, HINS4 &lt;dbl&gt;, HINS5 &lt;dbl&gt;,
+## #   HINS6 &lt;dbl&gt;, HINS7 &lt;dbl&gt;, INTP &lt;dbl&gt;, JWMNP &lt;dbl&gt;, JWRIP &lt;dbl&gt;, JWTR &lt;chr&gt;,
+## #   LANX &lt;dbl&gt;, MAR &lt;dbl&gt;, MARHD &lt;dbl&gt;, MARHM &lt;dbl&gt;, MARHT &lt;dbl&gt;, MARHW &lt;dbl&gt;,
+## #   MARHYP &lt;dbl&gt;, MIG &lt;dbl&gt;, MIL &lt;dbl&gt;, MLPA &lt;dbl&gt;, MLPB &lt;dbl&gt;, MLPCD &lt;dbl&gt;,
+## #   MLPE &lt;dbl&gt;, MLPFG &lt;dbl&gt;, MLPH &lt;dbl&gt;, MLPI &lt;dbl&gt;, MLPJ &lt;dbl&gt;, MLPK &lt;dbl&gt;,
+## #   NWAB &lt;dbl&gt;, NWAV &lt;dbl&gt;, NWLA &lt;dbl&gt;, NWLK &lt;dbl&gt;, NWRE &lt;dbl&gt;, OIP &lt;dbl&gt;,
+## #   PAP &lt;dbl&gt;, RELP &lt;dbl&gt;, RETP &lt;dbl&gt;, SCH &lt;dbl&gt;, SCHG &lt;chr&gt;, SCHL &lt;chr&gt;,
+## #   SEMP &lt;dbl&gt;, SEX &lt;dbl&gt;, SSIP &lt;dbl&gt;, SSP &lt;dbl&gt;, WAGP &lt;dbl&gt;, WKHP &lt;dbl&gt;,
+## #   WKL &lt;dbl&gt;, WKW &lt;dbl&gt;, WRK &lt;dbl&gt;, YOEP &lt;dbl&gt;, ANC &lt;dbl&gt;, ANC1P &lt;chr&gt;,
+## #   ANC2P &lt;chr&gt;, DECADE &lt;dbl&gt;, DIS &lt;dbl&gt;, DRIVESP &lt;dbl&gt;, ESP &lt;chr&gt;, ESR &lt;dbl&gt;,
+## #   FOD1P &lt;dbl&gt;, FOD2P &lt;dbl&gt;, HICOV &lt;dbl&gt;, HISP &lt;chr&gt;, INDP &lt;chr&gt;, JWAP &lt;chr&gt;,
+## #   JWDP &lt;chr&gt;, LANP &lt;dbl&gt;, MIGPUMA &lt;chr&gt;, MIGSP &lt;chr&gt;, MSP &lt;dbl&gt;,
+## #   NAICSP &lt;chr&gt;, NATIVITY &lt;dbl&gt;, NOP &lt;chr&gt;, OC &lt;chr&gt;, OCCP &lt;chr&gt;, PAOC &lt;chr&gt;,
+## #   PERNP &lt;dbl&gt;, PINCP &lt;dbl&gt;, POBP &lt;chr&gt;, POVPIP &lt;dbl&gt;, POWPUMA &lt;chr&gt;,
+## #   POWSP &lt;chr&gt;, PRIVCOV &lt;dbl&gt;, PUBCOV &lt;dbl&gt;, QTRBIR &lt;dbl&gt;, RAC1P &lt;dbl&gt;, …</code></pre>
+<p>There is too much data to fit so the computer luckily is smart enough to show only the first 10 rows and first several columns with a caveat that there are “35,628 more rows, and 501 more variables:”. The <code>glimpse</code> command gives an overview of the data. It lists how many rows the data has (35,638) and how many variables (512) as well as their names. It also shows different values from each variable.</p>
+<p>If you want to glimpse the data yourself run this command:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="data-and-data-management.html#cb8-1"></a><span class="kw">glimpse</span>(ACS2018_ASC_raw)</span></code></pre></div>
+</div>
+</div>
+<div id="cleaning-data" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Cleaning data</h2>
+<p>We are now ready to being the process of “cleaning” our data. Cleaning is the process of putting it into a form that is easiest to analyze and work with. For instance, you probably aren’t going to need all 512 variables so we will get rid of the ones we don’t need. There are also issues with how the data is “coded”. For instance, males are denoted with a <code>1</code> in the data instead of the word <code>Male</code> which is annoying. We need tools to make these changes.</p>
+<div id="the-pipe" class="section level3" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> The Pipe</h3>
+<p>The pipe is one of our most powerful tools. It makes it easy to do multiple things to our data. If you want a command to do something to data you type <code>data %&gt;% command</code>. The pipe is the weird looking symbols, <code>%&gt;%</code>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="data-and-data-management.html#cb9-1"></a>data <span class="op">%&gt;%</span><span class="st">   </span></span>
+<span id="cb9-2"><a href="data-and-data-management.html#cb9-2"></a><span class="st">  </span><span class="kw">cut</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb9-3"><a href="data-and-data-management.html#cb9-3"></a><span class="st">  </span><span class="kw">marinate</span>() <span class="op">%&gt;%</span></span>
+<span id="cb9-4"><a href="data-and-data-management.html#cb9-4"></a><span class="st">  </span><span class="kw">cook</span>() <span class="op">%&gt;%</span></span>
+<span id="cb9-5"><a href="data-and-data-management.html#cb9-5"></a><span class="st">  </span><span class="kw">eat</span>()</span></code></pre></div>
+<p>tells R to load the <code>data</code> and then do several things to it. The first pipe tells R to take the <code>data</code> and <code>cut</code> it. The second pipe tells R to take the stuff which was <code>cut</code> and then <code>marinate</code> it. The third pipe tells R to take the <code>cut</code> and <code>marinate</code>(d) data and <code>cook</code> it. The fourth and final pipe tells R to take the <code>cut</code>, <code>marinated</code>(d) and <code>cook</code>(ed) data and <code>eat</code> it. You’ll use the pipe a lot to string together different commands.</p>
+</div>
+<div id="looking-at-one-variable" class="section level3" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Looking at one variable</h3>
+<p>There’s no need to always see or work with all 512 variables. Instead we will <code>select</code> one or more variables needed for analysis. Let’s start with selecting a variable which tells us the subject’s sex.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="data-and-data-management.html#cb10-1"></a>ACS2018_ASC_raw <span class="op">%&gt;%</span></span>
+<span id="cb10-2"><a href="data-and-data-management.html#cb10-2"></a><span class="st">  </span><span class="kw">select</span>(SEX)</span></code></pre></div>
+<pre><code>## # A tibble: 35,638 x 1
+##      SEX
+##    &lt;dbl&gt;
+##  1     1
+##  2     1
+##  3     1
+##  4     2
+##  5     2
+##  6     2
+##  7     1
+##  8     2
+##  9     2
+## 10     1
+## # … with 35,628 more rows</code></pre>
+<p>Success, we only see the sex of the subject. However it’s in a basically unreadable state. Why are there <code>1</code>’s and <code>2</code>’s?</p>
+</div>
+<div id="types-of-variables" class="section level3" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> Types of variables</h3>
+<p>The Census Bureau saves all data as numbers for historical and other reasons. However not all variables that we will want to deal with are best recorded with numbers. Often we want a “character” or “categorical” response. I would answer “Male” to the question “What is your gender?” just like I would answer “5” to the question “How many sibblings do you have?”.</p>
+<p>Variables that have number responses are called numeric variables. Variables that have word responses are called categorical variables.</p>
+<p>According to the codebook:</p>
+<blockquote>
+<p>Character 1<br />
+Sex<br />
+1 .Male<br />
+2 .Female</p>
+</blockquote>
+<p>We need to <strong>recode</strong> the values by turning <code>1</code>’s (numeric) into <code>Male</code> (categorical) and <code>2</code>’s into <code>Female</code>. However we don’t want to change the <code>SEX</code> variable. Instead we will create a new variable called <code>new_SEX</code>. This is one of the tenets of <strong><em>reproducible research</em></strong>. Suppose someone sees your analysis using this data and then wants to do it themselves. They’ll be surprised when they download the ACS data and find out there is no <code>Male</code> but only <code>1</code> in the <code>SEX</code> variable if you don’t include the code that made the change.</p>
+<p>We will accomplish this task of recoding in two parts.</p>
+</div>
+<div id="mutate" class="section level3" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> Mutate</h3>
+<p>We create a new variable using <code>mutate</code>. <code>mutate</code> takes a variable and creates a new variable by doing something to the old variable. For instance, maybe we want to add 7 to everyone’s age.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="data-and-data-management.html#cb12-1"></a>ACS2018_ASC_raw <span class="op">%&gt;%</span></span>
+<span id="cb12-2"><a href="data-and-data-management.html#cb12-2"></a><span class="st">  </span><span class="kw">select</span>(AGEP) <span class="op">%&gt;%</span></span>
+<span id="cb12-3"><a href="data-and-data-management.html#cb12-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">new_AGEP =</span> AGEP <span class="op">+</span><span class="st"> </span><span class="dv">7</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 35,638 x 2
+##     AGEP new_AGEP
+##    &lt;dbl&gt;    &lt;dbl&gt;
+##  1    19       26
+##  2    21       28
+##  3    65       72
+##  4    23       30
+##  5    48       55
+##  6    89       96
+##  7    18       25
+##  8    22       29
+##  9    94      101
+## 10    36       43
+## # … with 35,628 more rows</code></pre>
+<p>It’s fairly straight forward the equation in mutate is <code>old variable = new variable (changed)</code>.</p>
+</div>
+<div id="recode" class="section level3" number="2.3.5">
+<h3><span class="header-section-number">2.3.5</span> Recode</h3>
+<p>The <code>recode_factor</code> or <code>recode</code> function does the heavy lifting of turning all <code>1</code>’s into <code>Male</code>. The difference is whether you want to create a categorical/factor variable or not.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="data-and-data-management.html#cb14-1"></a><span class="kw">recode</span>(oldvarible,</span>
+<span id="cb14-2"><a href="data-and-data-management.html#cb14-2"></a>       <span class="st">&quot;old value 1&quot;</span> =<span class="st"> &quot;new value 1&quot;</span>,</span>
+<span id="cb14-3"><a href="data-and-data-management.html#cb14-3"></a>       <span class="st">&quot;old value 2&quot;</span> =<span class="st"> &quot;new value 2&quot;</span>)</span></code></pre></div>
+<p>We put everything together to get this code which uses both <code>mutate</code> and <code>recode</code> to make a new <code>SEX</code> variable which says <code>Male</code> and <code>Female</code>.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="data-and-data-management.html#cb15-1"></a>ACS2018_ASC_raw <span class="op">%&gt;%</span></span>
+<span id="cb15-2"><a href="data-and-data-management.html#cb15-2"></a><span class="st">  </span><span class="kw">select</span>(SEX) <span class="op">%&gt;%</span></span>
+<span id="cb15-3"><a href="data-and-data-management.html#cb15-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">new_SEX =</span> <span class="kw">recode_factor</span>(SEX,</span>
+<span id="cb15-4"><a href="data-and-data-management.html#cb15-4"></a>                          <span class="st">&quot;1&quot;</span> =<span class="st"> &quot;Male&quot;</span>,</span>
+<span id="cb15-5"><a href="data-and-data-management.html#cb15-5"></a>                          <span class="st">&quot;2&quot;</span> =<span class="st"> &quot;Female&quot;</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 35,638 x 2
+##      SEX new_SEX
+##    &lt;dbl&gt; &lt;fct&gt;  
+##  1     1 Male   
+##  2     1 Male   
+##  3     1 Male   
+##  4     2 Female 
+##  5     2 Female 
+##  6     2 Female 
+##  7     1 Male   
+##  8     2 Female 
+##  9     2 Female 
+## 10     1 Male   
+## # … with 35,628 more rows</code></pre>
+<p><code>mutate</code> creates a new variable called <code>new_sex</code>. How are we making the new variable? By <code>recode</code>(ing) the variable <code>SEX</code>. Notice how inside of the recode we explain how the old value of <code>1</code> is to be come <code>Male</code> and similarly for <code>2</code> and <code>Female</code>.</p>
+<p>It’s important to note that we did not change the <code>SEX</code> instead a new one was created. Also we didn’t add <code>new_SEX</code> to <code>ACS2018_TriCity_raw</code> (check yourself and see). You would need to use <code>&lt;-</code> to save the results with the new variable.</p>
+<p>Try and run the code above <em>without</em> the <code>select(SEX)</code> command. What is the difference?</p>
+</div>
+<div id="putting-it-all-together-with-several-variables" class="section level3" number="2.3.6">
+<h3><span class="header-section-number">2.3.6</span> Putting it all together with several variables</h3>
+<p>Let’s say you only want these variables for your research questions: <code>SEX</code>, <code>DEYE</code>, <code>DEAR</code>, <code>AGEP</code>, <code>WAGP</code>, <code>WKHP</code>, <code>NP</code>, <code>BDSP</code>, <code>RNTP</code>, <code>RAC1P</code>, <code>FINCP</code>, <code>HINCP</code>, <code>FS</code>, <code>HUPAC</code>, <code>PINCP</code>, <code>PUMA</code>, and <code>SERIALNO</code>. There’s no point in keeping the other variables (they just clutter up the screen and waste memory) so let’s make a new raw data set with just those.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="data-and-data-management.html#cb17-1"></a>mydata_raw &lt;-<span class="st"> </span>ACS2018_ASC_raw <span class="op">%&gt;%</span></span>
+<span id="cb17-2"><a href="data-and-data-management.html#cb17-2"></a><span class="st">  </span><span class="kw">select</span>(SEX, AGEP, DEYE, DEAR, RAC1P, <span class="co"># Personal characteristics</span></span>
+<span id="cb17-3"><a href="data-and-data-management.html#cb17-3"></a>         WAGP, WKHP, PINCP,            <span class="co"># Economic characteristics</span></span>
+<span id="cb17-4"><a href="data-and-data-management.html#cb17-4"></a>         FINCP, HINCP,</span>
+<span id="cb17-5"><a href="data-and-data-management.html#cb17-5"></a>         NP, NPF, BDSP, RNTP, MRGP, MV,</span>
+<span id="cb17-6"><a href="data-and-data-management.html#cb17-6"></a>         FS, HUPAC, MSP,</span>
+<span id="cb17-7"><a href="data-and-data-management.html#cb17-7"></a>         JWMNP, JWTR,</span>
+<span id="cb17-8"><a href="data-and-data-management.html#cb17-8"></a>         PUMA, SERIALNO)</span></code></pre></div>
+<p>It doesn’t print anything because R is saving the 23 variables into <code>mydata_raw</code>. Let’s <code>glimpse</code> it to see.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="data-and-data-management.html#cb18-1"></a>mydata_raw <span class="op">%&gt;%</span></span>
+<span id="cb18-2"><a href="data-and-data-management.html#cb18-2"></a><span class="st">  </span>glimpse</span></code></pre></div>
+<pre><code>## Rows: 35,638
+## Columns: 23
+## $ SEX      &lt;dbl&gt; 1, 1, 1, 2, 2, 2, 1, 2, 2, 1, 2, 1, 1, 2, 1, 2, 2, 2, 1, 2, …
+## $ AGEP     &lt;dbl&gt; 19, 21, 65, 23, 48, 89, 18, 22, 94, 36, 18, 64, 15, 18, 19, …
+## $ DEYE     &lt;dbl&gt; 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, …
+## $ DEAR     &lt;dbl&gt; 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, …
+## $ RAC1P    &lt;dbl&gt; 6, 1, 1, 1, 1, 1, 1, 1, 2, 8, 6, 1, 2, 1, 1, 9, 6, 2, 1, 1, …
+## $ WAGP     &lt;dbl&gt; 50, 7700, 5000, 6000, 0, 0, 500, 0, 0, 0, 1400, 0, 0, 0, 360…
+## $ WKHP     &lt;dbl&gt; 5, 20, 8, 50, NA, NA, 12, NA, NA, NA, 12, NA, NA, NA, 20, 40…
+## $ PINCP    &lt;dbl&gt; 50, 7700, 17200, 7500, 0, 15600, 500, 0, 4300, 0, 1400, 1740…
+## $ FINCP    &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+## $ HINCP    &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+## $ NP       &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …
+## $ NPF      &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+## $ BDSP     &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+## $ RNTP     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+## $ MRGP     &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+## $ MV       &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+## $ FS       &lt;dbl&gt; 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, …
+## $ HUPAC    &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+## $ MSP      &lt;dbl&gt; 6, 6, 6, 6, 6, 3, 6, 6, 3, 6, 6, 4, 6, 6, 6, 6, 4, 6, 2, 6, …
+## $ JWMNP    &lt;dbl&gt; NA, 10, 25, 10, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+## $ JWTR     &lt;chr&gt; NA, &quot;10&quot;, &quot;01&quot;, &quot;10&quot;, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ PUMA     &lt;chr&gt; &quot;00101&quot;, &quot;00106&quot;, &quot;08507&quot;, &quot;00103&quot;, &quot;00106&quot;, &quot;08512&quot;, &quot;08509…
+## $ SERIALNO &lt;chr&gt; &quot;2018GQ0000039&quot;, &quot;2018GQ0000045&quot;, &quot;2018GQ0000059&quot;, &quot;2018GQ00…</code></pre>
+<p>Success. It only has the 23 variables for 35638 subjects. It’s simpler if you only work with the variables you need. Now we need to recode the variables and save them into a new dataframe called <code>mydata_clean</code>. The data dictionary says to make the following replacements for <code>DEAR</code>, <code>DEYE</code> and <code>RAC1P</code>:</p>
+<blockquote>
+<p>DEAR<br />
+Hearing difficulty<br />
+1 .Yes<br />
+2 .No</p>
+<p>DEYE<br />
+Vision difficulty<br />
+1 .Yes<br />
+2 .No</p>
+<p>RAC1P<br />
+1 .White alone<br />
+2 .Black or African American alone<br />
+3 .American Indian alone<br />
+4 .Alaska Native alone<br />
+5 .American Indian and Alaska Native tribes specified; or American Indian or Alaska Native, not specified and no other races<br />
+6 .Asian alone<br />
+7 .Native Hawaiian and Other Pacific Islander alone<br />
+8 .Some Other Race alone<br />
+9 .Two or More Races</p>
+<p>FS<br />
+Yearly food stamp/Supplemental Nutrition Assistance Program (SNAP) recipiency<br />
+b .N/A (vacant)<br />
+1 .Yes<br />
+2 .No</p>
+<p>HUPAC<br />
+HH presence and age of children<br />
+b .N/A (GQ/vacant)<br />
+1 .With children under 6 years only<br />
+2 .With children 6 to 17 years only<br />
+3 .With children under 6 years and 6 to 17 years<br />
+4 .No children</p>
+<p>JWTR<br />
+Means of transportation to work<br />
+bb .N/A (not a worker–not in the labor force, including persons<br />
+.under 16 years; unemployed; employed, with a job but not at work; Armed Forces, with a job but not at work)<br />
+01 .Car, truck, or van<br />
+02 .Bus or trolley bus<br />
+03 .Streetcar or trolley car (carro publico in Puerto Rico) 04 .Subway or elevated<br />
+05 .Railroad<br />
+06 .Ferryboat<br />
+07 .Taxicab<br />
+08 .Motorcycle<br />
+09 .Bicycle<br />
+10 .Walked<br />
+11 .Worked at home<br />
+12 .Other method</p>
+<p>MSP<br />
+Married, spouse present/spouse absent<br />
+b .N/A (age less than 15 years)<br />
+1 .Now married, spouse present<br />
+2 .Now married, spouse absent<br />
+3 .Widowed<br />
+4 .Divorced<br />
+5 .Separated<br />
+6 .Never married</p>
+<p>MV<br />
+When moved into this house or apartment<br />
+b .N/A (GQ/vacant)<br />
+1 .12 months or less<br />
+2 .13 to 23 months<br />
+3 .2 to 4 years<br />
+4 .5 to 9 years<br />
+5 .10 to 19 years<br />
+6 .20 to 29 years<br />
+7 .30 years or more</p>
+</blockquote>
+<p>We won’t recode the other variables because they are actually numbers (discrete or continuous) and not categories.</p>
+<ul>
+<li><code>AGEP</code> is the person’s age.</li>
+<li><code>WAGP</code> is a person’s wage.</li>
+<li><code>WKHP</code> is the number of hours the person worked the previous week.</li>
+<li><code>NP</code> is the number of family members.</li>
+<li><code>BDSP</code> is the number of bedrooms in the person’s house.</li>
+<li><code>RENTP</code> is monthly rent.</li>
+<li><code>FINCP</code> is total family income in the last 12 months.</li>
+<li><code>HINCP</code> is the whole household’s income in the last 12 months. There might be multiple families in a household or what the census calls “sub-family” relationships.</li>
+<li><code>PINCP</code> is total personal income in the last 12 months.</li>
+<li><code>SERIALNO</code> is a unique number assigned to each household. Everyone with the same <code>SERIALNO</code> lives together which makes it possible to distinguish households and individuals.</li>
+</ul>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="data-and-data-management.html#cb20-1"></a>mydata_clean &lt;-<span class="st"> </span>mydata_raw <span class="op">%&gt;%</span></span>
+<span id="cb20-2"><a href="data-and-data-management.html#cb20-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">new_SEX =</span> <span class="kw">recode_factor</span>(SEX,</span>
+<span id="cb20-3"><a href="data-and-data-management.html#cb20-3"></a>                                 <span class="st">&quot;1&quot;</span> =<span class="st"> &quot;Male&quot;</span>,</span>
+<span id="cb20-4"><a href="data-and-data-management.html#cb20-4"></a>                                 <span class="st">&quot;2&quot;</span> =<span class="st"> &quot;Female&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb20-5"><a href="data-and-data-management.html#cb20-5"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">new_DEYE =</span> <span class="kw">recode_factor</span>(DEYE,</span>
+<span id="cb20-6"><a href="data-and-data-management.html#cb20-6"></a>                                  <span class="st">&quot;1&quot;</span> =<span class="st"> &quot;Eye difficulty&quot;</span>,</span>
+<span id="cb20-7"><a href="data-and-data-management.html#cb20-7"></a>                                  <span class="st">&quot;2&quot;</span> =<span class="st"> &quot;No eye difficulty&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb20-8"><a href="data-and-data-management.html#cb20-8"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">new_DEAR =</span> <span class="kw">recode_factor</span>(DEAR,</span>
+<span id="cb20-9"><a href="data-and-data-management.html#cb20-9"></a>                                  <span class="st">&quot;1&quot;</span> =<span class="st"> &quot;Hearing difficulty&quot;</span>,</span>
+<span id="cb20-10"><a href="data-and-data-management.html#cb20-10"></a>                                  <span class="st">&quot;2&quot;</span> =<span class="st"> &quot;No hearing difficulty&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb20-11"><a href="data-and-data-management.html#cb20-11"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">new_RAC1P =</span> <span class="kw">recode_factor</span>(RAC1P,</span>
+<span id="cb20-12"><a href="data-and-data-management.html#cb20-12"></a>                                   <span class="st">&quot;1&quot;</span> =<span class="st"> &quot;White alone&quot;</span>,</span>
+<span id="cb20-13"><a href="data-and-data-management.html#cb20-13"></a>                                   <span class="st">&quot;2&quot;</span> =<span class="st"> &quot;Black or African American alone&quot;</span>,</span>
+<span id="cb20-14"><a href="data-and-data-management.html#cb20-14"></a>                                   <span class="st">&quot;3&quot;</span> =<span class="st"> &quot;American Indian alone&quot;</span>,</span>
+<span id="cb20-15"><a href="data-and-data-management.html#cb20-15"></a>                                   <span class="st">&quot;4&quot;</span> =<span class="st"> &quot;Alaska Native alone&quot;</span>,</span>
+<span id="cb20-16"><a href="data-and-data-management.html#cb20-16"></a>                                   <span class="st">&quot;5&quot;</span> =<span class="st"> &quot;American Indian&quot;</span>,</span>
+<span id="cb20-17"><a href="data-and-data-management.html#cb20-17"></a>                                   <span class="st">&quot;6&quot;</span> =<span class="st"> &quot;Asian alone&quot;</span>,</span>
+<span id="cb20-18"><a href="data-and-data-management.html#cb20-18"></a>                                   <span class="st">&quot;7&quot;</span> =<span class="st"> &quot;Native Hawaiian and Other Pacific Islander alone&quot;</span>,</span>
+<span id="cb20-19"><a href="data-and-data-management.html#cb20-19"></a>                                   <span class="st">&quot;8&quot;</span> =<span class="st"> &quot;Some Other Race alone&quot;</span>,</span>
+<span id="cb20-20"><a href="data-and-data-management.html#cb20-20"></a>                                   <span class="st">&quot;9&quot;</span> =<span class="st"> &quot;Two or more races&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb20-21"><a href="data-and-data-management.html#cb20-21"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">SERIALNO =</span> <span class="kw">factor</span>(SERIALNO)) <span class="op">%&gt;%</span></span>
+<span id="cb20-22"><a href="data-and-data-management.html#cb20-22"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">PUMA =</span> <span class="kw">factor</span>(PUMA)) <span class="op">%&gt;%</span></span>
+<span id="cb20-23"><a href="data-and-data-management.html#cb20-23"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">new_FS =</span> <span class="kw">recode_factor</span>(FS,</span>
+<span id="cb20-24"><a href="data-and-data-management.html#cb20-24"></a>                                <span class="st">&quot;1&quot;</span> =<span class="st"> &quot;Food stamps&quot;</span>,</span>
+<span id="cb20-25"><a href="data-and-data-management.html#cb20-25"></a>                                <span class="st">&quot;2&quot;</span> =<span class="st"> &quot;No food stamps&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb20-26"><a href="data-and-data-management.html#cb20-26"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">new_HUPAC =</span> <span class="kw">recode_factor</span>(HUPAC,</span>
+<span id="cb20-27"><a href="data-and-data-management.html#cb20-27"></a>                                   <span class="st">&quot;1&quot;</span> =<span class="st"> &quot;With children under 6 years only&quot;</span>,</span>
+<span id="cb20-28"><a href="data-and-data-management.html#cb20-28"></a>                                   <span class="st">&quot;2&quot;</span> =<span class="st"> &quot;With children 6 to 17 years&quot;</span>,</span>
+<span id="cb20-29"><a href="data-and-data-management.html#cb20-29"></a>                                   <span class="st">&quot;3&quot;</span> =<span class="st"> &quot;With children under 6 years and 6 to 17 years&quot;</span>,</span>
+<span id="cb20-30"><a href="data-and-data-management.html#cb20-30"></a>                                   <span class="st">&quot;4&quot;</span> =<span class="st"> &quot;No children&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb20-31"><a href="data-and-data-management.html#cb20-31"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">MV_new =</span> <span class="kw">recode_factor</span>(MV,</span>
+<span id="cb20-32"><a href="data-and-data-management.html#cb20-32"></a>                                <span class="st">&quot;1&quot;</span> =<span class="st"> &quot;12 months or less&quot;</span>,</span>
+<span id="cb20-33"><a href="data-and-data-management.html#cb20-33"></a>                                <span class="st">&quot;2&quot;</span> =<span class="st"> &quot;13 to 23 months&quot;</span>,</span>
+<span id="cb20-34"><a href="data-and-data-management.html#cb20-34"></a>                                <span class="st">&quot;3&quot;</span> =<span class="st"> &quot;2 to 4 years&quot;</span>,</span>
+<span id="cb20-35"><a href="data-and-data-management.html#cb20-35"></a>                                <span class="st">&quot;4&quot;</span> =<span class="st"> &quot;5 to 9 years&quot;</span>,</span>
+<span id="cb20-36"><a href="data-and-data-management.html#cb20-36"></a>                                <span class="st">&quot;5&quot;</span> =<span class="st"> &quot;5 to 9 years&quot;</span>,</span>
+<span id="cb20-37"><a href="data-and-data-management.html#cb20-37"></a>                                <span class="st">&quot;6&quot;</span> =<span class="st"> &quot;10 to 19 years&quot;</span>,</span>
+<span id="cb20-38"><a href="data-and-data-management.html#cb20-38"></a>                                <span class="st">&quot;7&quot;</span> =<span class="st"> &quot;20 to 29 years&quot;</span>,</span>
+<span id="cb20-39"><a href="data-and-data-management.html#cb20-39"></a>                                <span class="st">&quot;8&quot;</span> =<span class="st"> &quot;30 years or more&quot;</span>,</span>
+<span id="cb20-40"><a href="data-and-data-management.html#cb20-40"></a>                                <span class="dt">.ordered =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb20-41"><a href="data-and-data-management.html#cb20-41"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">JWTR_new =</span> <span class="kw">recode_factor</span>(JWTR,</span>
+<span id="cb20-42"><a href="data-and-data-management.html#cb20-42"></a>                                  <span class="st">&quot;01&quot;</span> =<span class="st"> &quot;Car, truck, or van&quot;</span>,</span>
+<span id="cb20-43"><a href="data-and-data-management.html#cb20-43"></a>                                  <span class="st">&quot;02&quot;</span> =<span class="st"> &quot;Bus or trolley bus&quot;</span>,</span>
+<span id="cb20-44"><a href="data-and-data-management.html#cb20-44"></a>                                  <span class="st">&quot;03&quot;</span> =<span class="st"> &quot;Streetcar&quot;</span>,</span>
+<span id="cb20-45"><a href="data-and-data-management.html#cb20-45"></a>                                  <span class="st">&quot;04&quot;</span> =<span class="st"> &quot;Subway&quot;</span>,</span>
+<span id="cb20-46"><a href="data-and-data-management.html#cb20-46"></a>                                  <span class="st">&quot;05&quot;</span> =<span class="st"> &quot;Railroad&quot;</span>,</span>
+<span id="cb20-47"><a href="data-and-data-management.html#cb20-47"></a>                                  <span class="st">&quot;06&quot;</span> =<span class="st"> &quot;Ferryboat&quot;</span>,</span>
+<span id="cb20-48"><a href="data-and-data-management.html#cb20-48"></a>                                  <span class="st">&quot;07&quot;</span> =<span class="st"> &quot;Taxicab&quot;</span>,</span>
+<span id="cb20-49"><a href="data-and-data-management.html#cb20-49"></a>                                  <span class="st">&quot;08&quot;</span> =<span class="st"> &quot;Motorcycle&quot;</span>,</span>
+<span id="cb20-50"><a href="data-and-data-management.html#cb20-50"></a>                                  <span class="st">&quot;09&quot;</span> =<span class="st"> &quot;Bicycle&quot;</span>,</span>
+<span id="cb20-51"><a href="data-and-data-management.html#cb20-51"></a>                                  <span class="st">&quot;10&quot;</span> =<span class="st"> &quot;Walked&quot;</span>,</span>
+<span id="cb20-52"><a href="data-and-data-management.html#cb20-52"></a>                                  <span class="st">&quot;11&quot;</span> =<span class="st"> &quot;Worked at home&quot;</span>,</span>
+<span id="cb20-53"><a href="data-and-data-management.html#cb20-53"></a>                                  <span class="st">&quot;12&quot;</span> =<span class="st"> &quot;Other method&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb20-54"><a href="data-and-data-management.html#cb20-54"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">MSP_new =</span> <span class="kw">recode_factor</span>(MSP,</span>
+<span id="cb20-55"><a href="data-and-data-management.html#cb20-55"></a>                                 <span class="st">&quot;1&quot;</span> =<span class="st"> &quot;Now married, spouse present&quot;</span>,</span>
+<span id="cb20-56"><a href="data-and-data-management.html#cb20-56"></a>                                 <span class="st">&quot;2&quot;</span> =<span class="st"> &quot;Now married, spouse absent&quot;</span>,</span>
+<span id="cb20-57"><a href="data-and-data-management.html#cb20-57"></a>                                 <span class="st">&quot;3&quot;</span> =<span class="st"> &quot;Widowed&quot;</span>,</span>
+<span id="cb20-58"><a href="data-and-data-management.html#cb20-58"></a>                                 <span class="st">&quot;4&quot;</span> =<span class="st"> &quot;Divorced&quot;</span>,</span>
+<span id="cb20-59"><a href="data-and-data-management.html#cb20-59"></a>                                 <span class="st">&quot;5&quot;</span> =<span class="st"> &quot;Separated&quot;</span>,</span>
+<span id="cb20-60"><a href="data-and-data-management.html#cb20-60"></a>                                 <span class="st">&quot;6&quot;</span> =<span class="st"> &quot;Never married&quot;</span>,</span>
+<span id="cb20-61"><a href="data-and-data-management.html#cb20-61"></a>                                 <span class="dt">.ordered =</span> <span class="ot">TRUE</span></span>
+<span id="cb20-62"><a href="data-and-data-management.html#cb20-62"></a>                                ))</span></code></pre></div>
+<p>Let’s look at the changes.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="data-and-data-management.html#cb21-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb21-2"><a href="data-and-data-management.html#cb21-2"></a><span class="st">  </span>glimpse</span></code></pre></div>
+<pre><code>## Rows: 35,638
+## Columns: 32
+## $ SEX       &lt;dbl&gt; 1, 1, 1, 2, 2, 2, 1, 2, 2, 1, 2, 1, 1, 2, 1, 2, 2, 2, 1, 2,…
+## $ AGEP      &lt;dbl&gt; 19, 21, 65, 23, 48, 89, 18, 22, 94, 36, 18, 64, 15, 18, 19,…
+## $ DEYE      &lt;dbl&gt; 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,…
+## $ DEAR      &lt;dbl&gt; 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,…
+## $ RAC1P     &lt;dbl&gt; 6, 1, 1, 1, 1, 1, 1, 1, 2, 8, 6, 1, 2, 1, 1, 9, 6, 2, 1, 1,…
+## $ WAGP      &lt;dbl&gt; 50, 7700, 5000, 6000, 0, 0, 500, 0, 0, 0, 1400, 0, 0, 0, 36…
+## $ WKHP      &lt;dbl&gt; 5, 20, 8, 50, NA, NA, 12, NA, NA, NA, 12, NA, NA, NA, 20, 4…
+## $ PINCP     &lt;dbl&gt; 50, 7700, 17200, 7500, 0, 15600, 500, 0, 4300, 0, 1400, 174…
+## $ FINCP     &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+## $ HINCP     &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+## $ NP        &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
+## $ NPF       &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+## $ BDSP      &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+## $ RNTP      &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+## $ MRGP      &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+## $ MV        &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+## $ FS        &lt;dbl&gt; 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2,…
+## $ HUPAC     &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+## $ MSP       &lt;dbl&gt; 6, 6, 6, 6, 6, 3, 6, 6, 3, 6, 6, 4, 6, 6, 6, 6, 4, 6, 2, 6,…
+## $ JWMNP     &lt;dbl&gt; NA, 10, 25, 10, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+## $ JWTR      &lt;chr&gt; NA, &quot;10&quot;, &quot;01&quot;, &quot;10&quot;, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+## $ PUMA      &lt;fct&gt; 00101, 00106, 08507, 00103, 00106, 08512, 08509, 08509, 001…
+## $ SERIALNO  &lt;fct&gt; 2018GQ0000039, 2018GQ0000045, 2018GQ0000059, 2018GQ0000238,…
+## $ new_SEX   &lt;fct&gt; Male, Male, Male, Female, Female, Female, Male, Female, Fem…
+## $ new_DEYE  &lt;fct&gt; No eye difficulty, No eye difficulty, No eye difficulty, No…
+## $ new_DEAR  &lt;fct&gt; No hearing difficulty, No hearing difficulty, No hearing di…
+## $ new_RAC1P &lt;fct&gt; Asian alone, White alone, White alone, White alone, White a…
+## $ new_FS    &lt;fct&gt; No food stamps, No food stamps, No food stamps, No food sta…
+## $ new_HUPAC &lt;fct&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+## $ MV_new    &lt;ord&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+## $ JWTR_new  &lt;fct&gt; NA, &quot;Walked&quot;, &quot;Car, truck, or van&quot;, &quot;Walked&quot;, NA, NA, NA, N…
+## $ MSP_new   &lt;ord&gt; &quot;Never married&quot;, &quot;Never married&quot;, &quot;Never married&quot;, &quot;Never m…</code></pre>
+<p>Never change the original data! If you recode a variable or change values, create a new one. This is one of the principles of reproducible analysis–don’t change the original data and document all changes.</p>
+<p>Now let’s remove the original variables. We will “subtract” them away using <code>select</code>. Remember that we need to save the changes with the arrow <code>&lt;-</code></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="data-and-data-management.html#cb23-1"></a>mydata_clean &lt;-<span class="st"> </span>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb23-2"><a href="data-and-data-management.html#cb23-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>SEX,</span>
+<span id="cb23-3"><a href="data-and-data-management.html#cb23-3"></a>         <span class="op">-</span>DEAR,</span>
+<span id="cb23-4"><a href="data-and-data-management.html#cb23-4"></a>         <span class="op">-</span>DEYE,</span>
+<span id="cb23-5"><a href="data-and-data-management.html#cb23-5"></a>         <span class="op">-</span>RAC1P,</span>
+<span id="cb23-6"><a href="data-and-data-management.html#cb23-6"></a>         <span class="op">-</span>FS,</span>
+<span id="cb23-7"><a href="data-and-data-management.html#cb23-7"></a>         <span class="op">-</span>HUPAC,</span>
+<span id="cb23-8"><a href="data-and-data-management.html#cb23-8"></a>         <span class="op">-</span>MV,</span>
+<span id="cb23-9"><a href="data-and-data-management.html#cb23-9"></a>         <span class="op">-</span>JWTR)</span></code></pre></div>
+<p>Let’s glimpse the clean data.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="data-and-data-management.html#cb24-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb24-2"><a href="data-and-data-management.html#cb24-2"></a><span class="st">  </span>glimpse</span></code></pre></div>
+<pre><code>## Rows: 35,638
+## Columns: 24
+## $ AGEP      &lt;dbl&gt; 19, 21, 65, 23, 48, 89, 18, 22, 94, 36, 18, 64, 15, 18, 19,…
+## $ WAGP      &lt;dbl&gt; 50, 7700, 5000, 6000, 0, 0, 500, 0, 0, 0, 1400, 0, 0, 0, 36…
+## $ WKHP      &lt;dbl&gt; 5, 20, 8, 50, NA, NA, 12, NA, NA, NA, 12, NA, NA, NA, 20, 4…
+## $ PINCP     &lt;dbl&gt; 50, 7700, 17200, 7500, 0, 15600, 500, 0, 4300, 0, 1400, 174…
+## $ FINCP     &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+## $ HINCP     &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+## $ NP        &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
+## $ NPF       &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+## $ BDSP      &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+## $ RNTP      &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+## $ MRGP      &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+## $ MSP       &lt;dbl&gt; 6, 6, 6, 6, 6, 3, 6, 6, 3, 6, 6, 4, 6, 6, 6, 6, 4, 6, 2, 6,…
+## $ JWMNP     &lt;dbl&gt; NA, 10, 25, 10, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+## $ PUMA      &lt;fct&gt; 00101, 00106, 08507, 00103, 00106, 08512, 08509, 08509, 001…
+## $ SERIALNO  &lt;fct&gt; 2018GQ0000039, 2018GQ0000045, 2018GQ0000059, 2018GQ0000238,…
+## $ new_SEX   &lt;fct&gt; Male, Male, Male, Female, Female, Female, Male, Female, Fem…
+## $ new_DEYE  &lt;fct&gt; No eye difficulty, No eye difficulty, No eye difficulty, No…
+## $ new_DEAR  &lt;fct&gt; No hearing difficulty, No hearing difficulty, No hearing di…
+## $ new_RAC1P &lt;fct&gt; Asian alone, White alone, White alone, White alone, White a…
+## $ new_FS    &lt;fct&gt; No food stamps, No food stamps, No food stamps, No food sta…
+## $ new_HUPAC &lt;fct&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+## $ MV_new    &lt;ord&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+## $ JWTR_new  &lt;fct&gt; NA, &quot;Walked&quot;, &quot;Car, truck, or van&quot;, &quot;Walked&quot;, NA, NA, NA, N…
+## $ MSP_new   &lt;ord&gt; &quot;Never married&quot;, &quot;Never married&quot;, &quot;Never married&quot;, &quot;Never m…</code></pre>
+</div>
+</div>
+<div id="saving-your-clean-data-to-a-file" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Saving your clean data to a file</h2>
+<p>Now that we’ve created a new data frame with only the variables that we need and they’re clean, we can save it. We will save our data, <code>myclean_data</code>, into the <code>Data</code> directory as <code>myclean_data.RData</code>. You can load this clean version with only the variables you want in the future.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="data-and-data-management.html#cb26-1"></a><span class="kw">save</span>(mydata_clean, <span class="dt">file =</span> <span class="st">&quot;~/Data/output/ACS_clean.RData&quot;</span>)</span></code></pre></div>
+<p>Next time you need the data to analyze, simply load it with <code>load("~/Data/output/ACS_clean.RData")</code>. The data will be named <code>mydata_clean</code> or whatever name you used.</p>
+</div>
+<div id="filtering-rows" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Filtering rows</h2>
+<p>Sometimes instead of selecting columns we only want to select certain rows. This is called <code>filter</code>ing. We can <code>filter</code> out everything except women who have no hearing difficulty. You can put multiple criteria by separating with commas. Notice the use of the double equals <code>==</code>.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="data-and-data-management.html#cb27-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb27-2"><a href="data-and-data-management.html#cb27-2"></a><span class="st">  </span><span class="kw">filter</span>(new_SEX <span class="op">==</span><span class="st"> &quot;Female&quot;</span>,</span>
+<span id="cb27-3"><a href="data-and-data-management.html#cb27-3"></a>         new_DEAR <span class="op">==</span><span class="st"> &quot;No hearing difficulty&quot;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 17,592 x 24
+##     AGEP  WAGP  WKHP PINCP FINCP HINCP    NP   NPF  BDSP  RNTP  MRGP   MSP JWMNP
+##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1    23  6000    50  7500    NA    NA     1    NA    NA    NA    NA     6    10
+##  2    48     0    NA     0    NA    NA     1    NA    NA    NA    NA     6    NA
+##  3    89     0    NA 15600    NA    NA     1    NA    NA    NA    NA     3    NA
+##  4    22     0    NA     0    NA    NA     1    NA    NA    NA    NA     6    NA
+##  5    94     0    NA  4300    NA    NA     1    NA    NA    NA    NA     3    NA
+##  6    18  1400    12  1400    NA    NA     1    NA    NA    NA    NA     6    NA
+##  7    18     0    NA     0    NA    NA     1    NA    NA    NA    NA     6    NA
+##  8    25 39000    40 39000    NA    NA     1    NA    NA    NA    NA     6    10
+##  9    84     0    NA 50300    NA    NA     1    NA    NA    NA    NA     4    NA
+## 10    34     0    NA  8800    NA    NA     1    NA    NA    NA    NA     6    NA
+## # … with 17,582 more rows, and 11 more variables: PUMA &lt;fct&gt;, SERIALNO &lt;fct&gt;,
+## #   new_SEX &lt;fct&gt;, new_DEYE &lt;fct&gt;, new_DEAR &lt;fct&gt;, new_RAC1P &lt;fct&gt;,
+## #   new_FS &lt;fct&gt;, new_HUPAC &lt;fct&gt;, MV_new &lt;ord&gt;, JWTR_new &lt;fct&gt;, MSP_new &lt;ord&gt;</code></pre>
+<p>All the <code>new_SEX</code> values are <code>Female</code> and <code>new_DEAR</code> values are <code>No hearing difficulty</code> because that was what we <code>filter</code>ed. There are different values for <code>new_DEYE</code> because it wasn’t part of the filter. I want to bring your attention to where is says <code>A tibble: 17,592 x 11</code>. This means there were 17,592 people from Alameda and Santa Clara counties who were females with no hearing difficult. We have 11 variables about those people.</p>
+</div>
+<div id="counting-and-summarizing" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Counting and Summarizing</h2>
+<div id="categorical" class="section level3" number="2.6.1">
+<h3><span class="header-section-number">2.6.1</span> Categorical</h3>
+<p>You can use the <code>count</code> command to count the number of occurences of each value in a categorical variable. For instance, <code>count(new_Sex)</code> will count how many times <code>Male</code> and <code>Female</code> occur in the variable <code>new_Sex</code>.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="data-and-data-management.html#cb29-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb29-2"><a href="data-and-data-management.html#cb29-2"></a><span class="st">  </span><span class="kw">count</span>(new_SEX)</span></code></pre></div>
+<pre><code>## # A tibble: 2 x 2
+##   new_SEX     n
+##   &lt;fct&gt;   &lt;int&gt;
+## 1 Male    17587
+## 2 Female  18051</code></pre>
+<p>There are several hundred more females than males in our sample. You can put several several variables at a time if you separate the variables with commas.</p>
+<p>I’m going to filter and count. I start by filtering for children i.e. age less than 18. I will then have the computer count how many childdren live in a household of one person, two people, and so on.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="data-and-data-management.html#cb31-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb31-2"><a href="data-and-data-management.html#cb31-2"></a><span class="st">  </span><span class="kw">filter</span>(AGEP <span class="op">&lt;</span><span class="st"> </span><span class="dv">18</span>) <span class="op">%&gt;%</span></span>
+<span id="cb31-3"><a href="data-and-data-management.html#cb31-3"></a><span class="st">  </span><span class="kw">count</span>(NP)</span></code></pre></div>
+<pre><code>## # A tibble: 15 x 2
+##       NP     n
+##    &lt;dbl&gt; &lt;int&gt;
+##  1     1    62
+##  2     2   176
+##  3     3  1363
+##  4     4  2923
+##  5     5  1468
+##  6     6   634
+##  7     7   227
+##  8     8   158
+##  9     9   100
+## 10    10    51
+## 11    11    36
+## 12    12     6
+## 13    13     4
+## 14    14    12
+## 15    15     8</code></pre>
+<p>Who are these minors who live alone (<code>NP = 1</code>)? I can filter only those children and have the computer count by gender and age.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="data-and-data-management.html#cb33-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb33-2"><a href="data-and-data-management.html#cb33-2"></a><span class="st">  </span><span class="kw">filter</span>(AGEP <span class="op">&lt;</span><span class="st"> </span><span class="dv">18</span>, NP <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) <span class="op">%&gt;%</span></span>
+<span id="cb33-3"><a href="data-and-data-management.html#cb33-3"></a><span class="st">  </span><span class="kw">count</span>(new_SEX, AGEP)</span></code></pre></div>
+<pre><code>## # A tibble: 11 x 3
+##    new_SEX  AGEP     n
+##    &lt;fct&gt;   &lt;dbl&gt; &lt;int&gt;
+##  1 Male        7     1
+##  2 Male        8     1
+##  3 Male       12     1
+##  4 Male       13     1
+##  5 Male       14     1
+##  6 Male       15    14
+##  7 Male       16     2
+##  8 Male       17    18
+##  9 Female     14     6
+## 10 Female     15     4
+## 11 Female     17    13</code></pre>
+<p>They’re mostly males although there are some 17, 15, and 14 year old females who live alone.</p>
+<p>There’s a nice command called <code>tabyl</code> in the <code>janitor</code> package which counts occurrences of values and gives percentages automatically for you. Notice that <code>tabyl</code> gives the same answer as <code>count</code>. The difference is in the inclusion of the percentage of the total. Apparently females are 50.7% compared to 49.3% for males in our sample.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="data-and-data-management.html#cb35-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb35-2"><a href="data-and-data-management.html#cb35-2"></a><span class="st">  </span><span class="kw">tabyl</span>(new_SEX)</span></code></pre></div>
+<pre><code>##  new_SEX     n   percent
+##     Male 17587 0.4934901
+##   Female 18051 0.5065099</code></pre>
+<p>It can count the occurrences for each combination of the values for two variables such as <code>new_DEAR</code> and <code>new_SEX</code>. How many feamles with hearing difficulty are there? Apparently 459.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="data-and-data-management.html#cb37-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb37-2"><a href="data-and-data-management.html#cb37-2"></a><span class="st">  </span><span class="kw">tabyl</span>(new_DEAR, new_SEX)</span></code></pre></div>
+<pre><code>##               new_DEAR  Male Female
+##     Hearing difficulty   492    459
+##  No hearing difficulty 17095  17592</code></pre>
+<p>This is helpful for when you need to make sure you recoded a variable correctly.</p>
+</div>
+<div id="numeric" class="section level3" number="2.6.2">
+<h3><span class="header-section-number">2.6.2</span> Numeric</h3>
+<p>The equivalent for numeric variables is the <code>summarize</code> command which works with other commands to give us an idea about what’s in the data. Suppose you want to know the minimum and maximum ages in the sample.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="data-and-data-management.html#cb39-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb39-2"><a href="data-and-data-management.html#cb39-2"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">min_age =</span> <span class="kw">min</span>(AGEP),</span>
+<span id="cb39-3"><a href="data-and-data-management.html#cb39-3"></a>            <span class="dt">avg_age =</span> <span class="kw">mean</span>(AGEP),</span>
+<span id="cb39-4"><a href="data-and-data-management.html#cb39-4"></a>            <span class="dt">max_age =</span> <span class="kw">max</span>(AGEP),</span>
+<span id="cb39-5"><a href="data-and-data-management.html#cb39-5"></a>            <span class="dt">n=</span><span class="kw">n</span>())</span></code></pre></div>
+<pre><code>## # A tibble: 1 x 4
+##   min_age avg_age max_age     n
+##     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;int&gt;
+## 1       0    39.8      94 35638</code></pre>
+<p>The youngest person in the sample is zero. The oldest is 94. The average age is 39.8 years. This is looking at <em>everybody</em> in the sample. What if you want to compare groups–maybe men and women?</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="data-and-data-management.html#cb41-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb41-2"><a href="data-and-data-management.html#cb41-2"></a><span class="st">  </span><span class="kw">group_by</span>(new_SEX) <span class="op">%&gt;%</span></span>
+<span id="cb41-3"><a href="data-and-data-management.html#cb41-3"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">min_age =</span> <span class="kw">min</span>(AGEP),</span>
+<span id="cb41-4"><a href="data-and-data-management.html#cb41-4"></a>            <span class="dt">avg_age =</span> <span class="kw">mean</span>(AGEP),</span>
+<span id="cb41-5"><a href="data-and-data-management.html#cb41-5"></a>            <span class="dt">max_age =</span> <span class="kw">max</span>(AGEP),</span>
+<span id="cb41-6"><a href="data-and-data-management.html#cb41-6"></a>            <span class="dt">n=</span><span class="kw">n</span>())</span></code></pre></div>
+<pre><code>## # A tibble: 2 x 5
+##   new_SEX min_age avg_age max_age     n
+##   &lt;fct&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;int&gt;
+## 1 Male          0    38.9      94 17587
+## 2 Female        0    40.7      94 18051</code></pre>
+<p>Not surprising, there were men and women between ages 0 and 94 just like the whole sample. Apparently women are slightly older on average–40.7 versus 38.9. This is interesting because the oldest men and women seem to be 94 but women on average are older.</p>
+
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="10">
+<li id="fn10"><p>You can go to this website <a href="https://tigerweb.geo.census.gov/tigerweb/" class="uri">https://tigerweb.geo.census.gov/tigerweb/</a> to narrow down a search to a smaller part of the county using a PUMA (Public Use Microdata Area).<a href="data-and-data-management.html#fnref10" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="preliminaries.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="describing-distributions-of-variables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

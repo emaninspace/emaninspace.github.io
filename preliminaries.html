@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 Preliminaries | Learn Statistics with Public Use Microdata</title>
+  <meta name="description" content="Introductory Statistics and Data Science" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 Preliminaries | Learn Statistics with Public Use Microdata" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Introductory Statistics and Data Science" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 Preliminaries | Learn Statistics with Public Use Microdata" />
+  
+  <meta name="twitter:description" content="Introductory Statistics and Data Science" />
+  
+
+<meta name="author" content="Emmanuel A. Garcia" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="preface.html"/>
+<link rel="next" href="data-and-data-management.html"/>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="preliminaries.html"><a href="preliminaries.html"><i class="fa fa-check"></i><b>1</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="preliminaries.html"><a href="preliminaries.html#stages-of-the-statistical-process"><i class="fa fa-check"></i><b>1.1</b> Stages of the statistical process</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="preliminaries.html"><a href="preliminaries.html#formulating-research-questions"><i class="fa fa-check"></i><b>1.1.1</b> Formulating Research Questions</a></li>
+<li class="chapter" data-level="1.1.2" data-path="preliminaries.html"><a href="preliminaries.html#collecting-data"><i class="fa fa-check"></i><b>1.1.2</b> Collecting Data</a></li>
+<li class="chapter" data-level="1.1.3" data-path="preliminaries.html"><a href="preliminaries.html#analysis"><i class="fa fa-check"></i><b>1.1.3</b> Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="preliminaries.html"><a href="preliminaries.html#public-use-microdata"><i class="fa fa-check"></i><b>1.2</b> Public Use Microdata</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="preliminaries.html"><a href="preliminaries.html#acs"><i class="fa fa-check"></i><b>1.2.1</b> ACS</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="preliminaries.html"><a href="preliminaries.html#using-r"><i class="fa fa-check"></i><b>1.3</b> Using R</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-and-data-management.html"><a href="data-and-data-management.html"><i class="fa fa-check"></i><b>2</b> Data and data management</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="data-and-data-management.html"><a href="data-and-data-management.html#first-stepload-packages"><i class="fa fa-check"></i><b>2.1</b> First step–load packages</a></li>
+<li class="chapter" data-level="2.2" data-path="data-and-data-management.html"><a href="data-and-data-management.html#second-stepload-data"><i class="fa fa-check"></i><b>2.2</b> Second step–load data</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="data-and-data-management.html"><a href="data-and-data-management.html#viewing-data"><i class="fa fa-check"></i><b>2.2.1</b> Viewing data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="data-and-data-management.html"><a href="data-and-data-management.html#cleaning-data"><i class="fa fa-check"></i><b>2.3</b> Cleaning data</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="data-and-data-management.html"><a href="data-and-data-management.html#the-pipe"><i class="fa fa-check"></i><b>2.3.1</b> The Pipe</a></li>
+<li class="chapter" data-level="2.3.2" data-path="data-and-data-management.html"><a href="data-and-data-management.html#looking-at-one-variable"><i class="fa fa-check"></i><b>2.3.2</b> Looking at one variable</a></li>
+<li class="chapter" data-level="2.3.3" data-path="data-and-data-management.html"><a href="data-and-data-management.html#types-of-variables"><i class="fa fa-check"></i><b>2.3.3</b> Types of variables</a></li>
+<li class="chapter" data-level="2.3.4" data-path="data-and-data-management.html"><a href="data-and-data-management.html#mutate"><i class="fa fa-check"></i><b>2.3.4</b> Mutate</a></li>
+<li class="chapter" data-level="2.3.5" data-path="data-and-data-management.html"><a href="data-and-data-management.html#recode"><i class="fa fa-check"></i><b>2.3.5</b> Recode</a></li>
+<li class="chapter" data-level="2.3.6" data-path="data-and-data-management.html"><a href="data-and-data-management.html#putting-it-all-together-with-several-variables"><i class="fa fa-check"></i><b>2.3.6</b> Putting it all together with several variables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="data-and-data-management.html"><a href="data-and-data-management.html#saving-your-clean-data-to-a-file"><i class="fa fa-check"></i><b>2.4</b> Saving your clean data to a file</a></li>
+<li class="chapter" data-level="2.5" data-path="data-and-data-management.html"><a href="data-and-data-management.html#filtering-rows"><i class="fa fa-check"></i><b>2.5</b> Filtering rows</a></li>
+<li class="chapter" data-level="2.6" data-path="data-and-data-management.html"><a href="data-and-data-management.html#counting-and-summarizing"><i class="fa fa-check"></i><b>2.6</b> Counting and Summarizing</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="data-and-data-management.html"><a href="data-and-data-management.html#categorical"><i class="fa fa-check"></i><b>2.6.1</b> Categorical</a></li>
+<li class="chapter" data-level="2.6.2" data-path="data-and-data-management.html"><a href="data-and-data-management.html#numeric"><i class="fa fa-check"></i><b>2.6.2</b> Numeric</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="describing-distributions-of-variables.html"><a href="describing-distributions-of-variables.html"><i class="fa fa-check"></i><b>3</b> Describing distributions of variables</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="describing-distributions-of-variables.html"><a href="describing-distributions-of-variables.html#categorical-variables"><i class="fa fa-check"></i><b>3.1</b> Categorical Variables</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="describing-distributions-of-variables.html"><a href="describing-distributions-of-variables.html#graphs"><i class="fa fa-check"></i><b>3.1.1</b> Graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="describing-distributions-of-variables.html"><a href="describing-distributions-of-variables.html#numeric-variables"><i class="fa fa-check"></i><b>3.2</b> Numeric variables</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="describing-distributions-of-variables.html"><a href="describing-distributions-of-variables.html#shape"><i class="fa fa-check"></i><b>3.2.1</b> Shape</a></li>
+<li class="chapter" data-level="3.2.2" data-path="describing-distributions-of-variables.html"><a href="describing-distributions-of-variables.html#outliers"><i class="fa fa-check"></i><b>3.2.2</b> Outliers</a></li>
+<li class="chapter" data-level="3.2.3" data-path="describing-distributions-of-variables.html"><a href="describing-distributions-of-variables.html#center-and-spread"><i class="fa fa-check"></i><b>3.2.3</b> Center and Spread</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html"><i class="fa fa-check"></i><b>4</b> Relationships between variables</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#falsifiability-1"><i class="fa fa-check"></i><b>4.1</b> Falsifiability</a></li>
+<li class="chapter" data-level="4.2" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#two-categorical-variables"><i class="fa fa-check"></i><b>4.2</b> Two categorical variables</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#row-and-column-percentages"><i class="fa fa-check"></i><b>4.2.1</b> Row and Column Percentages</a></li>
+<li class="chapter" data-level="4.2.2" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#graphing-bar-plot"><i class="fa fa-check"></i><b>4.2.2</b> Graphing – Bar Plot</a></li>
+<li class="chapter" data-level="4.2.3" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#an-example-with-a-hypothesis"><i class="fa fa-check"></i><b>4.2.3</b> An Example with a Hypothesis</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#numeric-and-categorical-variable"><i class="fa fa-check"></i><b>4.3</b> Numeric and Categorical Variable</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#another-example"><i class="fa fa-check"></i><b>4.3.1</b> Another Example</a></li>
+<li class="chapter" data-level="4.3.2" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#another"><i class="fa fa-check"></i><b>4.3.2</b> Another</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#two-numeric-variables"><i class="fa fa-check"></i><b>4.4</b> Two Numeric Variables</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#homeowners"><i class="fa fa-check"></i><b>4.4.1</b> Homeowners</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="inference.html"><a href="inference.html"><i class="fa fa-check"></i><b>5</b> Inference</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="inference.html"><a href="inference.html#sample-distribution"><i class="fa fa-check"></i><b>5.1</b> Sample Distribution</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="inference.html"><a href="inference.html#simulating-the-sample-distribution"><i class="fa fa-check"></i><b>5.1.1</b> Simulating the sample distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="inference.html"><a href="inference.html#normal-distribution"><i class="fa fa-check"></i><b>5.2</b> Normal Distribution</a></li>
+<li class="chapter" data-level="5.3" data-path="inference.html"><a href="inference.html#confidence-intervals"><i class="fa fa-check"></i><b>5.3</b> Confidence Intervals</a></li>
+<li class="chapter" data-level="5.4" data-path="inference.html"><a href="inference.html#old-version"><i class="fa fa-check"></i><b>5.4</b> OLD VERSION</a></li>
+<li class="chapter" data-level="5.5" data-path="inference.html"><a href="inference.html#corona-virus"><i class="fa fa-check"></i><b>5.5</b> Corona Virus</a></li>
+<li class="chapter" data-level="5.6" data-path="inference.html"><a href="inference.html#sample-distribution-1"><i class="fa fa-check"></i><b>5.6</b> Sample Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>6</b> Regression</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="regression.html"><a href="regression.html#simple-linear-regression"><i class="fa fa-check"></i><b>6.1</b> Simple Linear Regression</a></li>
+<li class="chapter" data-level="6.2" data-path="regression.html"><a href="regression.html#multiple-regression"><i class="fa fa-check"></i><b>6.2</b> Multiple Regression</a></li>
+<li class="chapter" data-level="6.3" data-path="regression.html"><a href="regression.html#logistic-regression"><i class="fa fa-check"></i><b>6.3</b> Logistic Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="tests-of-independence.html"><a href="tests-of-independence.html"><i class="fa fa-check"></i><b>7</b> Tests of Independence</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Learn Statistics with Public Use Microdata</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="preliminaries" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Preliminaries</h1>
+<blockquote>
+<p>…all models are approximations. Essentially, all models are wrong, but some are useful. However, the approximate nature of the model must always be borne in mind….</p>
+<p>— George Box (Statistician)</p>
+</blockquote>
+<p>The last hundred years, statistics has been an indispensable part of the <em>scientific method</em>–an attempt make statements (that are <em>probably</em> true) when one has imperfect information. It can roughly be broken down into three stages:</p>
+<ol style="list-style-type: decimal">
+<li>Pose a question.</li>
+<li>Collect relevant data/information.</li>
+<li>Analyze the data and reach a conclusion.</li>
+</ol>
+<p>This is a simplified view and we will provide more nuance as the course continues. But it gets the point across, statistics is the study of posing (certain types of) questions, collecting data, and finally analyzing the data and reaching a conclusion. The process often needs to be repeated–answering one questions just raises another–in other words it is <em>iterative</em>.</p>
+<p>It is important to realize that statistics <em>works in conjunction with another discipline</em>. A biologist might use statistical methods to pose questions, gather information, and make conclusions about biological problems and so too does the physicist, sociologist and a host of others. Statistics is inherently cross disciplinary.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p>It is much easier to learn this material <em>if you have a question you <strong>need</strong> to answer with data</em>. Many statistical methods were pioneered by scientists, not mathematicians, in pursuit of their scientific endeavours. World War II was a particularly fruitful time for practical statistics.</p>
+<blockquote>
+<p>Some war stories are tales of derring-do; others are more cerebral. Both types specialise in plot twists: wars knock people off one path and onto another. Lord Moser was one of dozens of young men in Britain who would never have become statisticians had it not been for the war, who helped win it for Britain and its allies—and who went on to transform statistics.</p>
+<p>Wars are when governments find the money and will to make things happen, says Eileen Magnello, a historian of statistics. As it mobilised and supplied troops, grew and rationed food, and retooled factories to make shells, planes and tanks, Britain’s government realised that its knowledge of the country’s society, economy and manufacturing skills was not up to the task—and that statisticians could help.</p>
+<p><a href="https://www.economist.com/christmas-specials/2014/12/17/they-also-served" class="uri">https://www.economist.com/christmas-specials/2014/12/17/they-also-served</a></p>
+</blockquote>
+<p>The English needed to make the most of sparse farmland. They used statistics to find the most efficient methods of growing and distributing food. The quality of the average Englishman’s diet actually increased during the war. The same goes for production of all sorts of products. Quality and quantity needed to increase. How did they do it? They employed statistical analysis of the methods of production.</p>
+<blockquote>
+<p>As the war progressed and the value of statistics became clearer, some Cambridge mathematics students were drafted to statistical work. David Cox, a grammar-school boy from Birmingham, was among them. In 1944 he went to the Royal Aircraft Establishment, a research institute in Farnborough. “The naive assumption was that if you were good enough to get a good degree in mathematics you would pick up statistics in a week or two,” he says. He was part of a group that analysed the distribution of German bombs falling on London each day. They concluded that the Germans were trying to destroy the docks but missing.</p>
+<p>Sir David also worked on quality-control in the manufacture of aircraft components, and the calculation of the distribution of stresses on aircraft in flight. “The aim was to load planes up to the point that the wings were about to drop off,” he says. The research meant the RAF dropped more bombs, and brought more pilots safely home, than it would have otherwise.</p>
+</blockquote>
+<p>The war was responsible for creating a generation of data informed decision makers. It is hard to quantify how large of an effect this group had on the English economy for years afterwards but it certainly couldn’t have hurt the post-war boom.</p>
+<blockquote>
+<p>Peace finally returned, and the statistical scene in the United Kingdom had been completely transformed,” wrote Barnard and Plackett. “No other method would have produced these changes in only six years.” Dozens of clever young people had been taught a fast-changing new subject—and in many cases done original research. Even routine work was elevated by the urgency and camaraderie of the war effort—and even the fact that they were new to the field. “A lot of the work was statistically boring,” Sir David says now. “But the point is that I didn’t really know anything.”</p>
+<p>“After the war the section exploded like a London bomb into missionary statistical occupations all over the country,” wrote Geoffrey Jowett, one of the SR 17 alumni, in 1990. “In convincing others that we had a good product to sell we convinced ourselves.” He went on to do research in quality control at United Steel Companies in Sheffield, and then to Sheffield University, and thence to universities in Australia and New Zealand.</p>
+<p>(Same article)</p>
+</blockquote>
+<div id="stages-of-the-statistical-process" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Stages of the statistical process</h2>
+<div id="formulating-research-questions" class="section level3" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Formulating Research Questions</h3>
+<p>Research questions aren’t really questions which is sort of confusing. One often starts with a question such as “Why aren’t students passing my class?” but properly stated <strong>a research question is a statement</strong>. For example the question might turn into the statement “Students aren’t passing because the lecture method used in class is ineffective at conveying information” which hinges the statement “the lecture method is ineffective at conveying information”.</p>
+<p>Not all questions (statements?) are made equal no matter what your previous teachers might have told you. We want to deal with questions that meet at least these two criteria:</p>
+<ol style="list-style-type: decimal">
+<li>They are falsifiable.</li>
+<li>They deal with more than two variables.</li>
+</ol>
+<div id="falsifiability" class="section level4" number="1.1.1.1">
+<h4><span class="header-section-number">1.1.1.1</span> Falsifiability</h4>
+<p>A falsifiable statement is one which can be shown wrong with evidence.</p>
+<blockquote>
+<p>Informally, a statement is falsifiable if some observation might show it to be false. For example, “All swans are white” is falsifiable because the observation “Here is a black swan” shows it to be false.</p>
+<p><a href="https://en.wikipedia.org/wiki/Falsifiability" class="uri">https://en.wikipedia.org/wiki/Falsifiability</a></p>
+</blockquote>
+<p>Is my research question falsifiable? Yes, because one could setup an <em>experiment</em><a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> to provide evidence that the lecture method is effective at conveying information thereby showing the statement wrong. It has been <em>falsified</em>.</p>
+<p>A non-falsifiable statement is “my boyfriend cheated on me”. It’s practically impossible to show the statement is <em>false</em>. Imagine that the statement is wrong—what evidence would there be? <em>None</em> because there is no evidence of <em>not cheating</em> unless one has extensive evidence (like 24 hour video footage covering the whole relationship). We can however turn it into a falsifiable statement with “my boyfriend <strong>didn’t</strong> cheat on me”.</p>
+<blockquote>
+<p>In most cases a falsifiable statement just needs one observation to disprove it. A Statement that is not falsifiable usually needs some sort of exhaustive search of all possibilities to disprove it</p>
+<p><a href="https://courses.vcu.edu/PHY-rhg/astron/html/mod/006/index.html" class="uri">https://courses.vcu.edu/PHY-rhg/astron/html/mod/006/index.html</a></p>
+</blockquote>
+</div>
+<div id="several-variables" class="section level4" number="1.1.1.2">
+<h4><span class="header-section-number">1.1.1.2</span> Several Variables</h4>
+<p>Interesting statements have a minimum amount of complexity. We are interested in finding <em>associations</em> between a pair of variables<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. Variables are associated if there is a pattern in the occurrences of values<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> of their respective variables. For instance, you may notice that happy teachers usually have students with high grades whereas unhappy teachers have students with low grades. The “happiness” of the teachers is associated with the “grades” of the student. Analyzing how happy teachers might be or the grades of students (separately) is interesting but it doesn’t tell us much. If we consider the two variables at the <em>same time</em>, we might be able to use our information to raise student grades.</p>
+</div>
+</div>
+<div id="collecting-data" class="section level3" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Collecting Data</h3>
+<p>One of the greatest discoveries in Statistics is that <em>how the data is collected</em> <strong>has a great influence on how useful it is</strong>. The ideal would be to have data on <strong>all</strong> the people you want to study. This is called a census which is a collection of data about an entire population (or all relevant people). It’s usually impractical to do a census so we settle for a sample (information on some of the population).</p>
+<div id="random-sampling" class="section level4" number="1.1.2.1">
+<h4><span class="header-section-number">1.1.2.1</span> Random Sampling</h4>
+<p>How a sample is chosen has far ranging effects. Choices about who or what to include in the sample <strong>bias</strong> the results. Consider how well a poll of San Francisco and Los Angeles will reflect the voting preference of the whole United States. The choice to only poll SF and LA biases the result. To avoid bias, the standard is to <em>randomly choose</em> the sample, in other words to “not” make a choice.</p>
+<p>How one chooses a sample is part of the larger study of <strong>sample design</strong>. Many investigations fail due to lack of planning i.e. poor sample design. It is a good idea to consult a statistician or plan carefully <em>before</em> you start. Statistics isn’t magic. Garbage planning will get you garbage results.</p>
+<blockquote>
+<p>To call in the statistician after the experiment is done may be no more than asking him to perform a post-mortem examination: he may be able to say what the experiment died of.</p>
+<p>— Ronald Fisher (Biologist/Statistician)</p>
+</blockquote>
+<p>An interesting example of the effect of biased sampling is Berkson’s Paradox. This anecdote about why handsome men are always jerks does a good job of explaining.</p>
+<blockquote>
+<p>Suppose Alex will only date a man if his niceness plus his handsomeness exceeds some threshold. Then nicer men do not have to be as handsome to qualify for Alex’s dating pool. So, among the men that Alex dates, Alex may observe that the nicer ones are less handsome on average (and vice versa), <em>even if these traits are uncorrelated in the general population</em>. … The average nice man that Alex dates is actually more handsome than the average man in the population (since even among nice men, the ugliest portion of the population is skipped). <strong>Berkson’s negative correlation is an effect that arises within the dating pool: the rude men that Alex dates must have been even more handsome to qualify</strong>.</p>
+<p><a href="https://en.wikipedia.org/wiki/Berkson%27s_paradox" class="uri">https://en.wikipedia.org/wiki/Berkson%27s_paradox</a></p>
+</blockquote>
+<p>The perceived relationship between being a jerk and being handsome doesn’t hold true in general. It is an effect of how Alex chooses men i.e. how she samples from the population.</p>
+</div>
+<div id="drawing-conclusions" class="section level4" number="1.1.2.2">
+<h4><span class="header-section-number">1.1.2.2</span> Drawing Conclusions</h4>
+<p>Researchers are usually interested in whether two or more variables are associated. Ideally we would like to know if one variable effects the outcome another variable. What is the difference between association and effect? Association is a “soft statement” that values of one variable <em>usually occur</em> with values of another variable. Effect is a “strong statement”. Statistical research is generally divided into two cases:</p>
+<ol style="list-style-type: decimal">
+<li>Observational Studies</li>
+<li>Experiments</li>
+</ol>
+<p>Observational studies imply that variables are merely associated. After pouring over the data you notice that certain values of a variable usually coincide with certain values of another variable. For instance, you notice that students who study a lot usually have high grades. Association doesn’t imply that more studying can increase higher grades. It simply states what was seen in the data.</p>
+<p>Experiments imply that one variable effected (caused) the outcome of another variable. In this case, we actually think more studying will lead to an increase in grades.</p>
+</div>
+<div id="random-assignment" class="section level4" number="1.1.2.3">
+<h4><span class="header-section-number">1.1.2.3</span> Random Assignment</h4>
+<p>What makes the difference? In an experiment the researcher <strong>randomly assigns</strong> subjects to either a treatment or control group. Random choices reduce bias in the object of study which is why there is random sampling, random assignment, etc. It increases the chance that pattern you see is a reflection of reality and not noise. The statistical meaning of noise is a pattern that only occurs in your particular experiment by chance and will not be seen again. It’s like “listening” to the scratches and hisses i.e. noise on an old vinyl and mistaking it for the music.</p>
+<p>In the studying example that would mean that the researcher randomly assigns half of students to study 8 or more hours a week and the other half to study less than four hours a week or <em>not at all</em><a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>. If the analysis of the grade data shows that the students who studied more have higher grades then we can conclude that the studying <em>caused</em> the higher grades. In an observational study, who studies a lot or a little is determined by some other mechanism such as the students deciding to study or not. No amount of post facto analysis can change a study to an experiment as R.A. Fisher pointed out. If subjects aren’t randomly assigned to different groups then the only conclusion one can make is that the variables are associated.</p>
+</div>
+</div>
+<div id="analysis" class="section level3" number="1.1.3">
+<h3><span class="header-section-number">1.1.3</span> Analysis</h3>
+<p>We will use the programming language called <code>R</code> to do statistical analysis for us. <code>R</code> descended from the S language (which probably stood for Statistics). It’s used in industry and academia to do statistical research<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>.</p>
+<p>You will recognize <code>R</code> code because it will show up like below.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="preliminaries.html#cb1-1"></a><span class="kw">r_command</span>()</span></code></pre></div>
+<p>This “step” is comprised of many smaller steps and maintain our focus for the rest of the semester. There is no general formulaic approach that always work. One often has to “play it by ear” so the goal is to teach you the most useful and common techniques.</p>
+<p>In general the, the analysis step requires <em>at least</em>:</p>
+<ol style="list-style-type: decimal">
+<li>Loading the data into the computer.</li>
+<li>“Cleaning” and “transforming” the data into a form which is understandable and analyzable.</li>
+<li>Choosing an appropriate analysis method.</li>
+<li>Interpreting the results from the analysis in the context of the original question.</li>
+</ol>
+</div>
+</div>
+<div id="public-use-microdata" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Public Use Microdata</h2>
+<p>Microdata means that the data is about <em>individuals</em> and not groups. Public use means that it is distributed by whomever for the public at large to use. We will use microdata from the Census Bureau that is released every year called the American Community Survey (ACS). There is a wealth of public microdata available from many time periods. A rather recent development is the digitization of previous census information. Researchers have a plethora of microdata available sometimes stretching back to 1703 which allows researchers to analyze how populations have changed over time in a way not possible before.<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a></p>
+<div id="acs" class="section level3" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> ACS</h3>
+<p>The Census Bureau created the ACS because federal, state, and local government agencies and researchers needed information which is updated more often than the census which is only done every 10 years. The reality is that communities are changing so quickly that the once every 10 year snapshot of the census wasn’t cutting it for tracking trends and changes. The ACS is now often the primary source of information whereas the “census” is only legally needed to apportion representatives to the House.</p>
+<p>The ACS is a random sample of 3.5 million American households (approximately 1%). The information is used to determine how over 675 billion dollars are spent.<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> It is a rolling sample–the information is collected over the course of a year. This is different from the census which is an attempt to collect information about every man, woman and child during April of the year it is performed. The Census Bureau spent a decade working on the method used to collect the information for the ACS regularly checking it against census information to assess it’s accuracy. The curious can an authoritative report on the design, implementation, and validation by the Census Bureau at <a href="https://www.census.gov/programs-surveys/acs/methodology/design-and-methodology.html" class="uri">https://www.census.gov/programs-surveys/acs/methodology/design-and-methodology.html</a>.</p>
+</div>
+</div>
+<div id="using-r" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Using R</h2>
+<p>There are many ways to use <code>R</code>. I think the easiest way to start with with RMarkdown documents. I actually used them to write this book. An Rmarkdown document lets us mix code and words resulting in what is called <em>literate programming</em>. The literate programming style isn’t just code. It’s code meant be read like a novel. We mix words which explain what we are doing and why with code that “crunches the numbers” so that we can make a decision. This mixture forces us to remember that someone will be reading our work! Eyes usually glaze over when pie charts and tables of numbers show up during a power point presentation. Our goal is present an engaging and thoughtful narrative to guide the reader through the data.</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>The famous statistics John Tukey said it best: “The best thing about being a statistician is that you get to play in everyone’s backyard.”<a href="preliminaries.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>We will explain what exactly constitutes an experiment later so don’t worry if you don’t understand how an experiment works.<a href="preliminaries.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>You can think of a variable as a question such as “How happy are you?”. A researcher will ask this question to many people and collect their responses to analyze.<a href="preliminaries.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>A value of a variable is the answer a person gives to the researcher. Remember that the variable is the question. The response, “no”, is the value of the variable, “Are you happy?”. There will be as many values for a variable as there were people asked the question.<a href="preliminaries.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>These groups are the treatment and control groups. The treatment is the group that did the action which you believe might cause higher grades–in this case studying more.<a href="preliminaries.html#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>Facebook, Instagram, Twitter, Amazon, etc. use it to figure out what should show up in your feed, what to recommend, what is trending, etc.<a href="preliminaries.html#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p><a href="http://users.hist.umn.edu/~ruggles/Articles/Big_Microdata.pdf" class="uri">http://users.hist.umn.edu/~ruggles/Articles/Big_Microdata.pdf</a><a href="preliminaries.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p><a href="https://www.census.gov/content/dam/Census/programs-surveys/acs/guidance/training-presentations/20180214_PUMS.pdf" class="uri">https://www.census.gov/content/dam/Census/programs-surveys/acs/guidance/training-presentations/20180214_PUMS.pdf</a><a href="preliminaries.html#fnref9" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="preface.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-and-data-management.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

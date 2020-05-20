@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Describing distributions of variables | Learn Statistics with Public Use Microdata</title>
+  <meta name="description" content="Introductory Statistics and Data Science" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Describing distributions of variables | Learn Statistics with Public Use Microdata" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Introductory Statistics and Data Science" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Describing distributions of variables | Learn Statistics with Public Use Microdata" />
+  
+  <meta name="twitter:description" content="Introductory Statistics and Data Science" />
+  
+
+<meta name="author" content="Emmanuel A. Garcia" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="data-and-data-management.html"/>
+<link rel="next" href="relationships-between-variables.html"/>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="preliminaries.html"><a href="preliminaries.html"><i class="fa fa-check"></i><b>1</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="preliminaries.html"><a href="preliminaries.html#stages-of-the-statistical-process"><i class="fa fa-check"></i><b>1.1</b> Stages of the statistical process</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="preliminaries.html"><a href="preliminaries.html#formulating-research-questions"><i class="fa fa-check"></i><b>1.1.1</b> Formulating Research Questions</a></li>
+<li class="chapter" data-level="1.1.2" data-path="preliminaries.html"><a href="preliminaries.html#collecting-data"><i class="fa fa-check"></i><b>1.1.2</b> Collecting Data</a></li>
+<li class="chapter" data-level="1.1.3" data-path="preliminaries.html"><a href="preliminaries.html#analysis"><i class="fa fa-check"></i><b>1.1.3</b> Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="preliminaries.html"><a href="preliminaries.html#public-use-microdata"><i class="fa fa-check"></i><b>1.2</b> Public Use Microdata</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="preliminaries.html"><a href="preliminaries.html#acs"><i class="fa fa-check"></i><b>1.2.1</b> ACS</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="preliminaries.html"><a href="preliminaries.html#using-r"><i class="fa fa-check"></i><b>1.3</b> Using R</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-and-data-management.html"><a href="data-and-data-management.html"><i class="fa fa-check"></i><b>2</b> Data and data management</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="data-and-data-management.html"><a href="data-and-data-management.html#first-stepload-packages"><i class="fa fa-check"></i><b>2.1</b> First step–load packages</a></li>
+<li class="chapter" data-level="2.2" data-path="data-and-data-management.html"><a href="data-and-data-management.html#second-stepload-data"><i class="fa fa-check"></i><b>2.2</b> Second step–load data</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="data-and-data-management.html"><a href="data-and-data-management.html#viewing-data"><i class="fa fa-check"></i><b>2.2.1</b> Viewing data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="data-and-data-management.html"><a href="data-and-data-management.html#cleaning-data"><i class="fa fa-check"></i><b>2.3</b> Cleaning data</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="data-and-data-management.html"><a href="data-and-data-management.html#the-pipe"><i class="fa fa-check"></i><b>2.3.1</b> The Pipe</a></li>
+<li class="chapter" data-level="2.3.2" data-path="data-and-data-management.html"><a href="data-and-data-management.html#looking-at-one-variable"><i class="fa fa-check"></i><b>2.3.2</b> Looking at one variable</a></li>
+<li class="chapter" data-level="2.3.3" data-path="data-and-data-management.html"><a href="data-and-data-management.html#types-of-variables"><i class="fa fa-check"></i><b>2.3.3</b> Types of variables</a></li>
+<li class="chapter" data-level="2.3.4" data-path="data-and-data-management.html"><a href="data-and-data-management.html#mutate"><i class="fa fa-check"></i><b>2.3.4</b> Mutate</a></li>
+<li class="chapter" data-level="2.3.5" data-path="data-and-data-management.html"><a href="data-and-data-management.html#recode"><i class="fa fa-check"></i><b>2.3.5</b> Recode</a></li>
+<li class="chapter" data-level="2.3.6" data-path="data-and-data-management.html"><a href="data-and-data-management.html#putting-it-all-together-with-several-variables"><i class="fa fa-check"></i><b>2.3.6</b> Putting it all together with several variables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="data-and-data-management.html"><a href="data-and-data-management.html#saving-your-clean-data-to-a-file"><i class="fa fa-check"></i><b>2.4</b> Saving your clean data to a file</a></li>
+<li class="chapter" data-level="2.5" data-path="data-and-data-management.html"><a href="data-and-data-management.html#filtering-rows"><i class="fa fa-check"></i><b>2.5</b> Filtering rows</a></li>
+<li class="chapter" data-level="2.6" data-path="data-and-data-management.html"><a href="data-and-data-management.html#counting-and-summarizing"><i class="fa fa-check"></i><b>2.6</b> Counting and Summarizing</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="data-and-data-management.html"><a href="data-and-data-management.html#categorical"><i class="fa fa-check"></i><b>2.6.1</b> Categorical</a></li>
+<li class="chapter" data-level="2.6.2" data-path="data-and-data-management.html"><a href="data-and-data-management.html#numeric"><i class="fa fa-check"></i><b>2.6.2</b> Numeric</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="describing-distributions-of-variables.html"><a href="describing-distributions-of-variables.html"><i class="fa fa-check"></i><b>3</b> Describing distributions of variables</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="describing-distributions-of-variables.html"><a href="describing-distributions-of-variables.html#categorical-variables"><i class="fa fa-check"></i><b>3.1</b> Categorical Variables</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="describing-distributions-of-variables.html"><a href="describing-distributions-of-variables.html#graphs"><i class="fa fa-check"></i><b>3.1.1</b> Graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="describing-distributions-of-variables.html"><a href="describing-distributions-of-variables.html#numeric-variables"><i class="fa fa-check"></i><b>3.2</b> Numeric variables</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="describing-distributions-of-variables.html"><a href="describing-distributions-of-variables.html#shape"><i class="fa fa-check"></i><b>3.2.1</b> Shape</a></li>
+<li class="chapter" data-level="3.2.2" data-path="describing-distributions-of-variables.html"><a href="describing-distributions-of-variables.html#outliers"><i class="fa fa-check"></i><b>3.2.2</b> Outliers</a></li>
+<li class="chapter" data-level="3.2.3" data-path="describing-distributions-of-variables.html"><a href="describing-distributions-of-variables.html#center-and-spread"><i class="fa fa-check"></i><b>3.2.3</b> Center and Spread</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html"><i class="fa fa-check"></i><b>4</b> Relationships between variables</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#falsifiability-1"><i class="fa fa-check"></i><b>4.1</b> Falsifiability</a></li>
+<li class="chapter" data-level="4.2" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#two-categorical-variables"><i class="fa fa-check"></i><b>4.2</b> Two categorical variables</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#row-and-column-percentages"><i class="fa fa-check"></i><b>4.2.1</b> Row and Column Percentages</a></li>
+<li class="chapter" data-level="4.2.2" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#graphing-bar-plot"><i class="fa fa-check"></i><b>4.2.2</b> Graphing – Bar Plot</a></li>
+<li class="chapter" data-level="4.2.3" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#an-example-with-a-hypothesis"><i class="fa fa-check"></i><b>4.2.3</b> An Example with a Hypothesis</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#numeric-and-categorical-variable"><i class="fa fa-check"></i><b>4.3</b> Numeric and Categorical Variable</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#another-example"><i class="fa fa-check"></i><b>4.3.1</b> Another Example</a></li>
+<li class="chapter" data-level="4.3.2" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#another"><i class="fa fa-check"></i><b>4.3.2</b> Another</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#two-numeric-variables"><i class="fa fa-check"></i><b>4.4</b> Two Numeric Variables</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="relationships-between-variables.html"><a href="relationships-between-variables.html#homeowners"><i class="fa fa-check"></i><b>4.4.1</b> Homeowners</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="inference.html"><a href="inference.html"><i class="fa fa-check"></i><b>5</b> Inference</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="inference.html"><a href="inference.html#sample-distribution"><i class="fa fa-check"></i><b>5.1</b> Sample Distribution</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="inference.html"><a href="inference.html#simulating-the-sample-distribution"><i class="fa fa-check"></i><b>5.1.1</b> Simulating the sample distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="inference.html"><a href="inference.html#normal-distribution"><i class="fa fa-check"></i><b>5.2</b> Normal Distribution</a></li>
+<li class="chapter" data-level="5.3" data-path="inference.html"><a href="inference.html#confidence-intervals"><i class="fa fa-check"></i><b>5.3</b> Confidence Intervals</a></li>
+<li class="chapter" data-level="5.4" data-path="inference.html"><a href="inference.html#old-version"><i class="fa fa-check"></i><b>5.4</b> OLD VERSION</a></li>
+<li class="chapter" data-level="5.5" data-path="inference.html"><a href="inference.html#corona-virus"><i class="fa fa-check"></i><b>5.5</b> Corona Virus</a></li>
+<li class="chapter" data-level="5.6" data-path="inference.html"><a href="inference.html#sample-distribution-1"><i class="fa fa-check"></i><b>5.6</b> Sample Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>6</b> Regression</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="regression.html"><a href="regression.html#simple-linear-regression"><i class="fa fa-check"></i><b>6.1</b> Simple Linear Regression</a></li>
+<li class="chapter" data-level="6.2" data-path="regression.html"><a href="regression.html#multiple-regression"><i class="fa fa-check"></i><b>6.2</b> Multiple Regression</a></li>
+<li class="chapter" data-level="6.3" data-path="regression.html"><a href="regression.html#logistic-regression"><i class="fa fa-check"></i><b>6.3</b> Logistic Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="tests-of-independence.html"><a href="tests-of-independence.html"><i class="fa fa-check"></i><b>7</b> Tests of Independence</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Learn Statistics with Public Use Microdata</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="describing-distributions-of-variables" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Describing distributions of variables</h1>
+<p>Statistics can give one a “bird’s eyes view” of the world. Or perhaps you’ve heard the phrase “seeing the forest from the trees”. We want the “larger” picture of what is going on in a variable. Somehow we want a bird’s eye view summary of what is happening with all the different values of a variable.</p>
+<p>For example, suppose we have a variable about how anxious people are on a scale of 1–5. It would be nice to how much of the sample is <em>distributed</em> across the different values i.e. how many 1’s, 2’s, and so on… Hopefully most people are a 1 or 2 and not 5. If we want to talk about the larger picture of a variable, we discuss the <strong>distribution</strong> of that variable.</p>
+<p>Knowing the distribution of a variable is important. We don’t want to rely on <em>anecdotal</em> evidence by focusing on a handful of occurrences.</p>
+<p>There are two new libraries we will need to load, <code>ggplot</code> for graphing and <code>knitr</code> for making beautiful tables. Don’t also forget to load your recoded data.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="describing-distributions-of-variables.html#cb43-1"></a><span class="kw">library</span>(dplyr)       <span class="co"># For pipe and other data commands</span></span>
+<span id="cb43-2"><a href="describing-distributions-of-variables.html#cb43-2"></a><span class="kw">library</span>(janitor)     <span class="co"># For tabyl</span></span>
+<span id="cb43-3"><a href="describing-distributions-of-variables.html#cb43-3"></a><span class="kw">library</span>(ggplot2)     <span class="co"># For plotting using ggplot() function</span></span>
+<span id="cb43-4"><a href="describing-distributions-of-variables.html#cb43-4"></a><span class="kw">library</span>(knitr)       <span class="co"># For making tables using kable()</span></span>
+<span id="cb43-5"><a href="describing-distributions-of-variables.html#cb43-5"></a><span class="kw">library</span>(stringr)     <span class="co"># Needed for an example</span></span>
+<span id="cb43-6"><a href="describing-distributions-of-variables.html#cb43-6"></a></span>
+<span id="cb43-7"><a href="describing-distributions-of-variables.html#cb43-7"></a><span class="kw">load</span>(<span class="st">&quot;~/Data/output/ACS_clean.RData&quot;</span>)</span>
+<span id="cb43-8"><a href="describing-distributions-of-variables.html#cb43-8"></a></span>
+<span id="cb43-9"><a href="describing-distributions-of-variables.html#cb43-9"></a>knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">warning=</span><span class="ot">FALSE</span>,</span>
+<span id="cb43-10"><a href="describing-distributions-of-variables.html#cb43-10"></a>                      <span class="dt">message=</span><span class="ot">FALSE</span>,</span>
+<span id="cb43-11"><a href="describing-distributions-of-variables.html#cb43-11"></a>                      <span class="dt">fig.width=</span><span class="dv">5</span>,</span>
+<span id="cb43-12"><a href="describing-distributions-of-variables.html#cb43-12"></a>                      <span class="dt">fig.align=</span><span class="st">&quot;center&quot;</span>) <span class="co"># No warnings</span></span></code></pre></div>
+<div id="categorical-variables" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Categorical Variables</h2>
+<p>The distribution of a categorical variable is described by the count or percentage (of the total) for each of the different values. This information is presented with a table. You can make a table with <code>count</code> or <code>tabyl</code>. I prefer the later since it automatically does percentages for you.</p>
+<p>It’s common to also use the word frequency instead of count likewise relative frequency for percentage.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="describing-distributions-of-variables.html#cb44-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb44-2"><a href="describing-distributions-of-variables.html#cb44-2"></a><span class="st">  </span><span class="kw">tabyl</span>(new_RAC1P)</span></code></pre></div>
+<pre><code>##                                         new_RAC1P     n      percent
+##                                       White alone 16031 0.4498288344
+##                   Black or African American alone  1739 0.0487962287
+##                             American Indian alone   157 0.0044054100
+##                               Alaska Native alone     4 0.0001122397
+##                                   American Indian    71 0.0019922555
+##                                       Asian alone 12456 0.3495145631
+##  Native Hawaiian and Other Pacific Islander alone   200 0.0056119872
+##                             Some Other Race alone  2946 0.0826645715
+##                                 Two or more races  2034 0.0570739099</code></pre>
+<p>If you live in the Bay Area, the results aren’t that surprising. The two largest categories are White and Asian alone respectively at 44% and 35% approximately. Mixed race people are at 5%. If you’re having difficulty reading the decimals as percentages use the <code>adorn_pct_formatting</code> command. Using the <code>kable</code> command also makes the table more visually appealing. I will use it for the remainder of the book.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="describing-distributions-of-variables.html#cb46-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb46-2"><a href="describing-distributions-of-variables.html#cb46-2"></a><span class="st">  </span><span class="kw">tabyl</span>(new_RAC1P) <span class="op">%&gt;%</span></span>
+<span id="cb46-3"><a href="describing-distributions-of-variables.html#cb46-3"></a><span class="st">  </span><span class="kw">adorn_pct_formatting</span>(<span class="dt">digits =</span> <span class="dv">1</span>) <span class="op">%&gt;%</span></span>
+<span id="cb46-4"><a href="describing-distributions-of-variables.html#cb46-4"></a><span class="st">  </span><span class="kw">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">new_RAC1P</th>
+<th align="right">n</th>
+<th align="left">percent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">White alone</td>
+<td align="right">16031</td>
+<td align="left">45.0%</td>
+</tr>
+<tr class="even">
+<td align="left">Black or African American alone</td>
+<td align="right">1739</td>
+<td align="left">4.9%</td>
+</tr>
+<tr class="odd">
+<td align="left">American Indian alone</td>
+<td align="right">157</td>
+<td align="left">0.4%</td>
+</tr>
+<tr class="even">
+<td align="left">Alaska Native alone</td>
+<td align="right">4</td>
+<td align="left">0.0%</td>
+</tr>
+<tr class="odd">
+<td align="left">American Indian</td>
+<td align="right">71</td>
+<td align="left">0.2%</td>
+</tr>
+<tr class="even">
+<td align="left">Asian alone</td>
+<td align="right">12456</td>
+<td align="left">35.0%</td>
+</tr>
+<tr class="odd">
+<td align="left">Native Hawaiian and Other Pacific Islander alone</td>
+<td align="right">200</td>
+<td align="left">0.6%</td>
+</tr>
+<tr class="even">
+<td align="left">Some Other Race alone</td>
+<td align="right">2946</td>
+<td align="left">8.3%</td>
+</tr>
+<tr class="odd">
+<td align="left">Two or more races</td>
+<td align="right">2034</td>
+<td align="left">5.7%</td>
+</tr>
+</tbody>
+</table>
+<p><code>digits = 1</code> tells <code>R</code> to round at the first decimal place. If you want more or less precision change the number. Zero digits means a whole number. If you want to sort for smallest to largest (ascending order) use the <code>arrange</code> command. You have to tell <code>R</code> the variable by which to arrange/sort. Use the <code>n</code> variable which counts the occurrences of each value.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="describing-distributions-of-variables.html#cb47-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb47-2"><a href="describing-distributions-of-variables.html#cb47-2"></a><span class="st">  </span><span class="kw">tabyl</span>(new_RAC1P) <span class="op">%&gt;%</span></span>
+<span id="cb47-3"><a href="describing-distributions-of-variables.html#cb47-3"></a><span class="st">  </span><span class="kw">adorn_pct_formatting</span>(<span class="dt">digits =</span> <span class="dv">1</span>) <span class="op">%&gt;%</span></span>
+<span id="cb47-4"><a href="describing-distributions-of-variables.html#cb47-4"></a><span class="st">  </span><span class="kw">arrange</span>(n) <span class="op">%&gt;%</span></span>
+<span id="cb47-5"><a href="describing-distributions-of-variables.html#cb47-5"></a><span class="st">  </span><span class="kw">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">new_RAC1P</th>
+<th align="right">n</th>
+<th align="left">percent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Alaska Native alone</td>
+<td align="right">4</td>
+<td align="left">0.0%</td>
+</tr>
+<tr class="even">
+<td align="left">American Indian</td>
+<td align="right">71</td>
+<td align="left">0.2%</td>
+</tr>
+<tr class="odd">
+<td align="left">American Indian alone</td>
+<td align="right">157</td>
+<td align="left">0.4%</td>
+</tr>
+<tr class="even">
+<td align="left">Native Hawaiian and Other Pacific Islander alone</td>
+<td align="right">200</td>
+<td align="left">0.6%</td>
+</tr>
+<tr class="odd">
+<td align="left">Black or African American alone</td>
+<td align="right">1739</td>
+<td align="left">4.9%</td>
+</tr>
+<tr class="even">
+<td align="left">Two or more races</td>
+<td align="right">2034</td>
+<td align="left">5.7%</td>
+</tr>
+<tr class="odd">
+<td align="left">Some Other Race alone</td>
+<td align="right">2946</td>
+<td align="left">8.3%</td>
+</tr>
+<tr class="even">
+<td align="left">Asian alone</td>
+<td align="right">12456</td>
+<td align="left">35.0%</td>
+</tr>
+<tr class="odd">
+<td align="left">White alone</td>
+<td align="right">16031</td>
+<td align="left">45.0%</td>
+</tr>
+</tbody>
+</table>
+<div id="graphs" class="section level3" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Graphs</h3>
+<p>A graph makes it easy to compare the relative size of groups since you can see the difference. For example if one group is 30% and the other is 60%, you might not realize the larger is twice the size of the other until you think about it but it’s immediately apparent in a graph.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="describing-distributions-of-variables.html#cb48-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb48-2"><a href="describing-distributions-of-variables.html#cb48-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(new_RAC1P)) <span class="op">+</span></span>
+<span id="cb48-3"><a href="describing-distributions-of-variables.html#cb48-3"></a><span class="st">    </span><span class="kw">geom_bar</span>() <span class="op">+</span></span>
+<span id="cb48-4"><a href="describing-distributions-of-variables.html#cb48-4"></a><span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&quot;Distribution of race variable&quot;</span>) <span class="op">+</span></span>
+<span id="cb48-5"><a href="describing-distributions-of-variables.html#cb48-5"></a><span class="st">    </span><span class="kw">xlab</span>(<span class="st">&quot;Race&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-33-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>Like always, the command starts with data and is then piped to another command. We will always use <code>ggplot</code> to graph something. Inside of the <code>ggplot</code> command is <code>aes()</code>, the aesthetic command, which tells <code>ggplot</code> what variable we want to graph, in this case <code>new_RAC1P</code>. There are then other commands which <em>modify</em> and <em>specify</em> what and how we want to graph the variable. <code>ggplot</code> uses <code>+</code> instead of the pipe to add more commands.</p>
+<ul>
+<li><code>geom_bar()</code> tells <code>ggplot</code> that we want a bar graph of a categorical variable.</li>
+<li><code>ggtitle</code> sets the title of the graph.</li>
+<li><code>xlab</code> set the x-axis label.</li>
+</ul>
+<p>Unfortunately it’s impossible to read the labels in the graph. You can fix this by turning the graph on its side with <code>coord_flip</code> and using a special function to make sure the descriptions aren’t too long using the <code>str_wrap</code>, string wrap, function. The <code>20</code> inside of <code>str_wrap</code> tells it to break up the words every 20 characters so the descriptions aren’t too long.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="describing-distributions-of-variables.html#cb49-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb49-2"><a href="describing-distributions-of-variables.html#cb49-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(new_RAC1P)) <span class="op">+</span></span>
+<span id="cb49-3"><a href="describing-distributions-of-variables.html#cb49-3"></a><span class="st">    </span><span class="kw">geom_bar</span>() <span class="op">+</span></span>
+<span id="cb49-4"><a href="describing-distributions-of-variables.html#cb49-4"></a><span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&quot;Distribution of race variable&quot;</span>) <span class="op">+</span></span>
+<span id="cb49-5"><a href="describing-distributions-of-variables.html#cb49-5"></a><span class="st">    </span><span class="kw">coord_flip</span>() <span class="op">+</span></span>
+<span id="cb49-6"><a href="describing-distributions-of-variables.html#cb49-6"></a><span class="st">    </span><span class="kw">aes</span>(stringr<span class="op">::</span><span class="kw">str_wrap</span>(new_RAC1P, <span class="dv">20</span>)) <span class="op">+</span></span>
+<span id="cb49-7"><a href="describing-distributions-of-variables.html#cb49-7"></a><span class="st">    </span><span class="kw">xlab</span>(<span class="st">&quot;Race&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-34-1.png" width="480" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="numeric-variables" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Numeric variables</h2>
+<p>The distributions of numeric variables are more complicated to describe than categorical variables. There are four major characteristics of numeric distributions.</p>
+<ol style="list-style-type: decimal">
+<li>The <em>shape</em> of the distriution.</li>
+<li>Whether the distribution has <em>outliers</em>.</li>
+<li>The <em>center</em> of the distribution.</li>
+<li>The <em>spread</em> of the distribution.</li>
+</ol>
+<div id="shape" class="section level3" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Shape</h3>
+<p>Our primary tool for describing the shape of a numerical distribution is the histogram. The histogram <em>bins</em> a range of numeric values together and counts how many are in each bin. The histogram of the <code>AGEP</code> variable might be binned with a range of ten.</p>
+<ul>
+<li>All people between zero and ten (not including ten) would be counted. This bin would be called [0,10).</li>
+<li>All people between ten and twenth (not including twenty) would be counted. This bin would be called [10,20).</li>
+<li>And so on…</li>
+<li>Each bin would be as tall as the number of people in it.</li>
+</ul>
+<p>Here is the distribution of the variable <code>BDSP</code>, number of bedrooms in a house, with bins of width one.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="describing-distributions-of-variables.html#cb50-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb50-2"><a href="describing-distributions-of-variables.html#cb50-2"></a><span class="st">  </span><span class="kw">distinct</span>(SERIALNO, BDSP) <span class="op">%&gt;%</span></span>
+<span id="cb50-3"><a href="describing-distributions-of-variables.html#cb50-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(BDSP)) <span class="op">+</span></span>
+<span id="cb50-4"><a href="describing-distributions-of-variables.html#cb50-4"></a><span class="st">    </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth=</span><span class="dv">1</span>,</span>
+<span id="cb50-5"><a href="describing-distributions-of-variables.html#cb50-5"></a>                   <span class="dt">boundary=</span><span class="dv">0</span>,</span>
+<span id="cb50-6"><a href="describing-distributions-of-variables.html#cb50-6"></a>                   <span class="dt">closed =</span> <span class="kw">c</span>(<span class="st">&quot;left&quot;</span>),</span>
+<span id="cb50-7"><a href="describing-distributions-of-variables.html#cb50-7"></a>                   <span class="dt">color =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-35-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>The bins are one wide which means;</p>
+<ul>
+<li>The first bin counts everything in [0,1) i.e. it includes zero but not one;</li>
+<li>The first bin counts everything in [1,2) i.e. it includes one but not two;</li>
+<li>And so on…</li>
+</ul>
+<p>We are interested in the tallest or most occurring bin. The graph shows that is the bin for two bedrooms with more than 10,000 occurrences. Let’s call this the “hightpoint” of the graph. The highpoint is approximately in the middle so this graph is <em>symmetric</em>.</p>
+<p>Let’s look at the histogram of <code>HINCP</code> which is total household income over the last twelve months. I’ve decided on a bin width of 25,000 so we will bin incomes by increments of 25,000 dollars.</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="describing-distributions-of-variables.html#cb51-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb51-2"><a href="describing-distributions-of-variables.html#cb51-2"></a><span class="st">  </span><span class="kw">distinct</span>(SERIALNO, HINCP) <span class="op">%&gt;%</span></span>
+<span id="cb51-3"><a href="describing-distributions-of-variables.html#cb51-3"></a><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(HINCP), HINCP <span class="op">&gt;=</span><span class="st"> </span><span class="dv">0</span>) <span class="op">%&gt;%</span></span>
+<span id="cb51-4"><a href="describing-distributions-of-variables.html#cb51-4"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span>HINCP)) <span class="op">+</span></span>
+<span id="cb51-5"><a href="describing-distributions-of-variables.html#cb51-5"></a><span class="st">    </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">y=</span>..density..),</span>
+<span id="cb51-6"><a href="describing-distributions-of-variables.html#cb51-6"></a>                   <span class="dt">binwidth =</span> <span class="dv">50000</span>,</span>
+<span id="cb51-7"><a href="describing-distributions-of-variables.html#cb51-7"></a>                   <span class="dt">boundary =</span> <span class="dv">0</span>,</span>
+<span id="cb51-8"><a href="describing-distributions-of-variables.html#cb51-8"></a>                   <span class="dt">closed =</span> <span class="kw">c</span>(<span class="st">&quot;left&quot;</span>),</span>
+<span id="cb51-9"><a href="describing-distributions-of-variables.html#cb51-9"></a>                   <span class="dt">color =</span> <span class="st">&quot;white&quot;</span></span>
+<span id="cb51-10"><a href="describing-distributions-of-variables.html#cb51-10"></a>                  ) <span class="op">+</span></span>
+<span id="cb51-11"><a href="describing-distributions-of-variables.html#cb51-11"></a><span class="st">    </span><span class="kw">geom_density</span>(<span class="dt">color=</span><span class="st">&quot;blue&quot;</span>) <span class="op">+</span></span>
+<span id="cb51-12"><a href="describing-distributions-of-variables.html#cb51-12"></a><span class="st">    </span><span class="kw">xlab</span>(<span class="st">&quot;Household income&quot;</span>) <span class="op">+</span></span>
+<span id="cb51-13"><a href="describing-distributions-of-variables.html#cb51-13"></a><span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&quot;Household income (HINCP)&quot;</span>) <span class="op">+</span></span>
+<span id="cb51-14"><a href="describing-distributions-of-variables.html#cb51-14"></a><span class="st">    </span><span class="kw">scale_x_continuous</span>(<span class="dt">labels =</span> scales<span class="op">::</span>comma)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-36-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>If you look carefuly or zoom in, the tallest bin is the third bin which is [50000, 75000) but the whole graph seems to stretch all the way out to past two million. The high point is no longer in the middle. This graph is <em>right skewed</em> because the distance from the high point to the right side of the graph is longer than the high point to the left side of the graph.</p>
+<p>There’s also a black line following the histogram. It is called a <em>density curve</em>. It smooths out the rectangular bins of the histogram. It also shows you how far the data goes when the bins are too small to see. The density curve ends a little past 2.5 million.</p>
+</div>
+<div id="outliers" class="section level3" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Outliers</h3>
+<p>Outliers are values that deviate significantly from the “norm”. They are small clumps of values (usually no more than a handful) that are isolated and “far away” from the rest of the values. It is easy to identify outliers by having <code>R</code> tell us how many values occurred in each bin.</p>
+<p>Go back and add this code to where you generated your variables:</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="describing-distributions-of-variables.html#cb52-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb52-2"><a href="describing-distributions-of-variables.html#cb52-2"></a><span class="st">  </span><span class="kw">distinct</span>(SERIALNO, HINCP, <span class="dt">.keepall =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></span>
+<span id="cb52-3"><a href="describing-distributions-of-variables.html#cb52-3"></a><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(HINCP), HINCP <span class="op">&gt;=</span><span class="st"> </span><span class="dv">0</span>) <span class="op">%&gt;%</span></span>
+<span id="cb52-4"><a href="describing-distributions-of-variables.html#cb52-4"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">HINCP_binned =</span> <span class="kw">cut</span>(HINCP,</span>
+<span id="cb52-5"><a href="describing-distributions-of-variables.html#cb52-5"></a>                            <span class="dt">breaks=</span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">0</span>,</span>
+<span id="cb52-6"><a href="describing-distributions-of-variables.html#cb52-6"></a>                                       <span class="dt">to=</span><span class="dv">2600000</span>,</span>
+<span id="cb52-7"><a href="describing-distributions-of-variables.html#cb52-7"></a>                                       <span class="dt">by=</span><span class="dv">50000</span>),</span>
+<span id="cb52-8"><a href="describing-distributions-of-variables.html#cb52-8"></a>                            <span class="dt">dig.lab=</span><span class="dv">7</span>,</span>
+<span id="cb52-9"><a href="describing-distributions-of-variables.html#cb52-9"></a>                            <span class="dt">right =</span> <span class="ot">FALSE</span></span>
+<span id="cb52-10"><a href="describing-distributions-of-variables.html#cb52-10"></a>                           )) <span class="op">%&gt;%</span></span>
+<span id="cb52-11"><a href="describing-distributions-of-variables.html#cb52-11"></a><span class="st">  </span><span class="kw">tabyl</span>(HINCP_binned) <span class="op">%&gt;%</span></span>
+<span id="cb52-12"><a href="describing-distributions-of-variables.html#cb52-12"></a><span class="st">  </span><span class="kw">adorn_pct_formatting</span>(<span class="dt">digits=</span><span class="dv">3</span>) <span class="op">%&gt;%</span></span>
+<span id="cb52-13"><a href="describing-distributions-of-variables.html#cb52-13"></a><span class="st">  </span><span class="kw">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">HINCP_binned</th>
+<th align="right">n</th>
+<th align="left">percent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">[0,50000)</td>
+<td align="right">2660</td>
+<td align="left">21.028%</td>
+</tr>
+<tr class="even">
+<td align="left">[50000,100000)</td>
+<td align="right">2719</td>
+<td align="left">21.494%</td>
+</tr>
+<tr class="odd">
+<td align="left">[100000,150000)</td>
+<td align="right">2188</td>
+<td align="left">17.296%</td>
+</tr>
+<tr class="even">
+<td align="left">[150000,200000)</td>
+<td align="right">1667</td>
+<td align="left">13.178%</td>
+</tr>
+<tr class="odd">
+<td align="left">[200000,250000)</td>
+<td align="right">1157</td>
+<td align="left">9.146%</td>
+</tr>
+<tr class="even">
+<td align="left">[250000,300000)</td>
+<td align="right">714</td>
+<td align="left">5.644%</td>
+</tr>
+<tr class="odd">
+<td align="left">[300000,350000)</td>
+<td align="right">409</td>
+<td align="left">3.233%</td>
+</tr>
+<tr class="even">
+<td align="left">[350000,400000)</td>
+<td align="right">295</td>
+<td align="left">2.332%</td>
+</tr>
+<tr class="odd">
+<td align="left">[400000,450000)</td>
+<td align="right">166</td>
+<td align="left">1.312%</td>
+</tr>
+<tr class="even">
+<td align="left">[450000,500000)</td>
+<td align="right">85</td>
+<td align="left">0.672%</td>
+</tr>
+<tr class="odd">
+<td align="left">[500000,550000)</td>
+<td align="right">57</td>
+<td align="left">0.451%</td>
+</tr>
+<tr class="even">
+<td align="left">[550000,600000)</td>
+<td align="right">201</td>
+<td align="left">1.589%</td>
+</tr>
+<tr class="odd">
+<td align="left">[600000,650000)</td>
+<td align="right">79</td>
+<td align="left">0.625%</td>
+</tr>
+<tr class="even">
+<td align="left">[650000,700000)</td>
+<td align="right">57</td>
+<td align="left">0.451%</td>
+</tr>
+<tr class="odd">
+<td align="left">[700000,750000)</td>
+<td align="right">57</td>
+<td align="left">0.451%</td>
+</tr>
+<tr class="even">
+<td align="left">[750000,800000)</td>
+<td align="right">35</td>
+<td align="left">0.277%</td>
+</tr>
+<tr class="odd">
+<td align="left">[800000,850000)</td>
+<td align="right">30</td>
+<td align="left">0.237%</td>
+</tr>
+<tr class="even">
+<td align="left">[850000,900000)</td>
+<td align="right">11</td>
+<td align="left">0.087%</td>
+</tr>
+<tr class="odd">
+<td align="left">[900000,950000)</td>
+<td align="right">11</td>
+<td align="left">0.087%</td>
+</tr>
+<tr class="even">
+<td align="left">[950000,1000000)</td>
+<td align="right">9</td>
+<td align="left">0.071%</td>
+</tr>
+<tr class="odd">
+<td align="left">[1000000,1050000)</td>
+<td align="right">4</td>
+<td align="left">0.032%</td>
+</tr>
+<tr class="even">
+<td align="left">[1050000,1100000)</td>
+<td align="right">2</td>
+<td align="left">0.016%</td>
+</tr>
+<tr class="odd">
+<td align="left">[1100000,1150000)</td>
+<td align="right">16</td>
+<td align="left">0.126%</td>
+</tr>
+<tr class="even">
+<td align="left">[1150000,1200000)</td>
+<td align="right">7</td>
+<td align="left">0.055%</td>
+</tr>
+<tr class="odd">
+<td align="left">[1200000,1250000)</td>
+<td align="right">2</td>
+<td align="left">0.016%</td>
+</tr>
+<tr class="even">
+<td align="left">[1250000,1300000)</td>
+<td align="right">3</td>
+<td align="left">0.024%</td>
+</tr>
+<tr class="odd">
+<td align="left">[1300000,1350000)</td>
+<td align="right">2</td>
+<td align="left">0.016%</td>
+</tr>
+<tr class="even">
+<td align="left">[1350000,1400000)</td>
+<td align="right">0</td>
+<td align="left">0.000%</td>
+</tr>
+<tr class="odd">
+<td align="left">[1400000,1450000)</td>
+<td align="right">0</td>
+<td align="left">0.000%</td>
+</tr>
+<tr class="even">
+<td align="left">[1450000,1500000)</td>
+<td align="right">2</td>
+<td align="left">0.016%</td>
+</tr>
+<tr class="odd">
+<td align="left">[1500000,1550000)</td>
+<td align="right">1</td>
+<td align="left">0.008%</td>
+</tr>
+<tr class="even">
+<td align="left">[1550000,1600000)</td>
+<td align="right">1</td>
+<td align="left">0.008%</td>
+</tr>
+<tr class="odd">
+<td align="left">[1600000,1650000)</td>
+<td align="right">0</td>
+<td align="left">0.000%</td>
+</tr>
+<tr class="even">
+<td align="left">[1650000,1700000)</td>
+<td align="right">0</td>
+<td align="left">0.000%</td>
+</tr>
+<tr class="odd">
+<td align="left">[1700000,1750000)</td>
+<td align="right">0</td>
+<td align="left">0.000%</td>
+</tr>
+<tr class="even">
+<td align="left">[1750000,1800000)</td>
+<td align="right">0</td>
+<td align="left">0.000%</td>
+</tr>
+<tr class="odd">
+<td align="left">[1800000,1850000)</td>
+<td align="right">1</td>
+<td align="left">0.008%</td>
+</tr>
+<tr class="even">
+<td align="left">[1850000,1900000)</td>
+<td align="right">1</td>
+<td align="left">0.008%</td>
+</tr>
+<tr class="odd">
+<td align="left">[1900000,1950000)</td>
+<td align="right">0</td>
+<td align="left">0.000%</td>
+</tr>
+<tr class="even">
+<td align="left">[1950000,2000000)</td>
+<td align="right">0</td>
+<td align="left">0.000%</td>
+</tr>
+<tr class="odd">
+<td align="left">[2000000,2050000)</td>
+<td align="right">0</td>
+<td align="left">0.000%</td>
+</tr>
+<tr class="even">
+<td align="left">[2050000,2100000)</td>
+<td align="right">0</td>
+<td align="left">0.000%</td>
+</tr>
+<tr class="odd">
+<td align="left">[2100000,2150000)</td>
+<td align="right">0</td>
+<td align="left">0.000%</td>
+</tr>
+<tr class="even">
+<td align="left">[2150000,2200000)</td>
+<td align="right">0</td>
+<td align="left">0.000%</td>
+</tr>
+<tr class="odd">
+<td align="left">[2200000,2250000)</td>
+<td align="right">0</td>
+<td align="left">0.000%</td>
+</tr>
+<tr class="even">
+<td align="left">[2250000,2300000)</td>
+<td align="right">0</td>
+<td align="left">0.000%</td>
+</tr>
+<tr class="odd">
+<td align="left">[2300000,2350000)</td>
+<td align="right">0</td>
+<td align="left">0.000%</td>
+</tr>
+<tr class="even">
+<td align="left">[2350000,2400000)</td>
+<td align="right">0</td>
+<td align="left">0.000%</td>
+</tr>
+<tr class="odd">
+<td align="left">[2400000,2450000)</td>
+<td align="right">0</td>
+<td align="left">0.000%</td>
+</tr>
+<tr class="even">
+<td align="left">[2450000,2500000)</td>
+<td align="right">0</td>
+<td align="left">0.000%</td>
+</tr>
+<tr class="odd">
+<td align="left">[2500000,2550000)</td>
+<td align="right">0</td>
+<td align="left">0.000%</td>
+</tr>
+<tr class="even">
+<td align="left">[2550000,2600000)</td>
+<td align="right">1</td>
+<td align="left">0.008%</td>
+</tr>
+</tbody>
+</table>
+<p>There are 1,406 households in the (50000,75000] bin. Down at the bottom is 1 household in the (2575000,2600000]. Not too surprisingly very few people make around 2.6 million. This household is an outlier because they’re the only household in that bin but more importantly there are about 20 empty bins between it and the next closest household in the (1875000,1900000] bin.</p>
+</div>
+<div id="center-and-spread" class="section level3" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> Center and Spread</h3>
+<p>Center and spread are <em>numerical measures</em> of the distribution. They are single numbers that attempt to describe a characteristic of the distribution.</p>
+<ul>
+<li>Center attempts to measure/describe a “typical” value in the distribution.</li>
+<li>Spread attempts to describe how far values “typically” deviate from the center.</li>
+</ul>
+<p>There are many ways to describe what is “typical” (most common, in the middle, what the cool kids do, etc.) so there are many measures of center and so too for spread. We will have two ways to measure each. We will choose which to use depending on the shape of the distribution.</p>
+<ul>
+<li>If the distribution is symmetric: Mean and Standard Deviation as center and spread.</li>
+<li>If the distribution is skewed: Median and IQR.</li>
+</ul>
+<div id="mean-and-standard-deviation" class="section level4" number="3.2.3.1">
+<h4><span class="header-section-number">3.2.3.1</span> Mean and Standard Deviation</h4>
+<p>The distribution of how much households pay for rent is fairly symmetric with a high point in the distribution between $1,500 and $2,000 according to the histogram. Note that the histogram is binned by $500 increments which I hope is reasonable. According to our rule, the “typical” value is determined by the mean.</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="describing-distributions-of-variables.html#cb53-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb53-2"><a href="describing-distributions-of-variables.html#cb53-2"></a><span class="st">  </span><span class="kw">distinct</span>(SERIALNO, RNTP) <span class="op">%&gt;%</span></span>
+<span id="cb53-3"><a href="describing-distributions-of-variables.html#cb53-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span>RNTP)) <span class="op">+</span></span>
+<span id="cb53-4"><a href="describing-distributions-of-variables.html#cb53-4"></a><span class="st">    </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">y=</span>..density..),</span>
+<span id="cb53-5"><a href="describing-distributions-of-variables.html#cb53-5"></a>                   <span class="dt">binwidth =</span> <span class="dv">500</span>,</span>
+<span id="cb53-6"><a href="describing-distributions-of-variables.html#cb53-6"></a>                   <span class="dt">boundary =</span> <span class="dv">0</span>,</span>
+<span id="cb53-7"><a href="describing-distributions-of-variables.html#cb53-7"></a>                   <span class="dt">closed =</span> <span class="kw">c</span>(<span class="st">&quot;left&quot;</span>),</span>
+<span id="cb53-8"><a href="describing-distributions-of-variables.html#cb53-8"></a>                   <span class="dt">color =</span> <span class="st">&quot;white&quot;</span></span>
+<span id="cb53-9"><a href="describing-distributions-of-variables.html#cb53-9"></a>                  ) <span class="op">+</span></span>
+<span id="cb53-10"><a href="describing-distributions-of-variables.html#cb53-10"></a><span class="st">    </span><span class="kw">geom_density</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-38-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>The mean is computed by adding all the values (in this case rents) and dividing by the number of values. It’s probably the “average” you learned in high school and grade school. The mean is called a “summary statistic”. It attempts to summarize a distribution. Use the summarize command to compute it. You need to include the <code>na.rm=TRUE</code> option to tell <code>R</code> to ignore anyone whose rent value is blank with <code>NA</code> for example people with a mortgage.</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="describing-distributions-of-variables.html#cb54-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb54-2"><a href="describing-distributions-of-variables.html#cb54-2"></a><span class="st">  </span><span class="kw">distinct</span>(SERIALNO, RNTP) <span class="op">%&gt;%</span></span>
+<span id="cb54-3"><a href="describing-distributions-of-variables.html#cb54-3"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(RNTP, <span class="dt">na.rm=</span><span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb54-4"><a href="describing-distributions-of-variables.html#cb54-4"></a><span class="st">  </span><span class="kw">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">mean</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">2004.136</td>
+</tr>
+</tbody>
+</table>
+<p>The “typical” person in the distribution pays $2,004 in rent which is literally pretty close to the center of the distribution hence the name.</p>
+<p>Standard deviation is the mean of the square of the distance between all the values and the mean. Put more plainly it measures how far “typically” values are from the mean.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="describing-distributions-of-variables.html#cb55-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb55-2"><a href="describing-distributions-of-variables.html#cb55-2"></a><span class="st">  </span><span class="kw">distinct</span>(SERIALNO, RNTP) <span class="op">%&gt;%</span></span>
+<span id="cb55-3"><a href="describing-distributions-of-variables.html#cb55-3"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(RNTP, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),</span>
+<span id="cb55-4"><a href="describing-distributions-of-variables.html#cb55-4"></a>            <span class="dt">sd =</span> <span class="kw">sd</span>(RNTP, <span class="dt">na.rm=</span><span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb55-5"><a href="describing-distributions-of-variables.html#cb55-5"></a><span class="st">  </span><span class="kw">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">mean</th>
+<th align="right">sd</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">2004.136</td>
+<td align="right">892.5093</td>
+</tr>
+</tbody>
+</table>
+<p>The standard deviation is $893 which means that “typically” some one pays rent that is somewhere between $893 more or less than the “typical” rent of $2,004. It tells you how “spread” out the amount people pay for rent is, hence the name spread. If the standard deviation is small, it means most people pay around the same amount. For example if the the standard deviation was $100, typically rents are situated within two hundred dollars of the average.</p>
+<p>We should also include the minimum and maximum values to round out the summary.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="describing-distributions-of-variables.html#cb56-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb56-2"><a href="describing-distributions-of-variables.html#cb56-2"></a><span class="st">  </span><span class="kw">distinct</span>(SERIALNO, RNTP) <span class="op">%&gt;%</span></span>
+<span id="cb56-3"><a href="describing-distributions-of-variables.html#cb56-3"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">min =</span> <span class="kw">min</span>(RNTP, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),</span>
+<span id="cb56-4"><a href="describing-distributions-of-variables.html#cb56-4"></a>            <span class="dt">mean =</span> <span class="kw">mean</span>(RNTP, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),</span>
+<span id="cb56-5"><a href="describing-distributions-of-variables.html#cb56-5"></a>            <span class="dt">sd =</span> <span class="kw">sd</span>(RNTP, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),</span>
+<span id="cb56-6"><a href="describing-distributions-of-variables.html#cb56-6"></a>            <span class="dt">max =</span> <span class="kw">max</span>(RNTP, <span class="dt">na.rm=</span><span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb56-7"><a href="describing-distributions-of-variables.html#cb56-7"></a><span class="st">  </span><span class="kw">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">min</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">max</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">4</td>
+<td align="right">2004.136</td>
+<td align="right">892.5093</td>
+<td align="right">3900</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="median-and-iqr" class="section level4" number="3.2.3.2">
+<h4><span class="header-section-number">3.2.3.2</span> Median and IQR</h4>
+<p>We know that household income is not symmetric. It is right skewed. The mean cannot be used as a measure of center for the “typical” household’s income instead we use median.</p>
+<p>The median is the “person in the middle”. If we were to line up everybody in Alameda and Santa Clara counties in order of lowest household income to largest household income, the income of the household in the middle of the line is the median of the distribution. This means that half of households are richer than the median and half are poorer.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="describing-distributions-of-variables.html#cb57-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb57-2"><a href="describing-distributions-of-variables.html#cb57-2"></a><span class="st">  </span><span class="kw">distinct</span>(SERIALNO, HINCP) <span class="op">%&gt;%</span></span>
+<span id="cb57-3"><a href="describing-distributions-of-variables.html#cb57-3"></a><span class="st">  </span><span class="kw">summarize_at</span>(<span class="kw">vars</span>(HINCP),</span>
+<span id="cb57-4"><a href="describing-distributions-of-variables.html#cb57-4"></a>               <span class="kw">list</span>(<span class="dt">Min. =</span> min,</span>
+<span id="cb57-5"><a href="describing-distributions-of-variables.html#cb57-5"></a>                    <span class="dt">Mean =</span> mean,</span>
+<span id="cb57-6"><a href="describing-distributions-of-variables.html#cb57-6"></a>                    <span class="dt">Median =</span> median,</span>
+<span id="cb57-7"><a href="describing-distributions-of-variables.html#cb57-7"></a>                    <span class="dt">Max. =</span> max,</span>
+<span id="cb57-8"><a href="describing-distributions-of-variables.html#cb57-8"></a>                    <span class="dt">IQR =</span> IQR),</span>
+<span id="cb57-9"><a href="describing-distributions-of-variables.html#cb57-9"></a>               <span class="dt">na.rm=</span><span class="ot">TRUE</span>) <span class="op">%&gt;%</span></span>
+<span id="cb57-10"><a href="describing-distributions-of-variables.html#cb57-10"></a><span class="st">  </span><span class="kw">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Min.</th>
+<th align="right">Mean</th>
+<th align="right">Median</th>
+<th align="right">Max.</th>
+<th align="right">IQR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">-4800</td>
+<td align="right">160302.7</td>
+<td align="right">120000</td>
+<td align="right">2580000</td>
+<td align="right">147150</td>
+</tr>
+</tbody>
+</table>
+<p>The “middle” or “typical” household makes $120,000 in Alameda and Santa Clara counties. Half make less and half make more. This number is different than the mean which is about $160,000. Why the difference? The high earning outliers we saw earlier “pull up” the average earnings. The mean is always closer to the outliers than it is to the middle of the distribution which is why we use it for skewed distributions.</p>
+<p>There five numbers to summarize the distribution.</p>
+<ul>
+<li>The <em>minimum value</em> of the distribution which in this case is -$4,800. Some household had negative earnings apparently.</li>
+<li>The <em>1st Quartile</em> of the distribution. The 1st Quartile is the household income which 25% of households make less than.</li>
+<li>The *median of the distribution. This is the household income which 50% of households make less than.</li>
+<li>The <em>3rd Quartile</em> of the distribution. This 3rd Quartile is the household income which 75% of households make less than.</li>
+<li>The <em>maximum</em> or the maximum of the “normal values”. Everything past the maximum or minimum is an outlier and shows up as a circle.</li>
+<li>The IQR measures how “spread out” the incomes of the middle 50% of households. They are spread out between 73575 above and below the median of 120,000.</li>
+</ul>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="describing-distributions-of-variables.html#cb58-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb58-2"><a href="describing-distributions-of-variables.html#cb58-2"></a><span class="st">  </span><span class="kw">distinct</span>(SERIALNO, HINCP) <span class="op">%&gt;%</span></span>
+<span id="cb58-3"><a href="describing-distributions-of-variables.html#cb58-3"></a><span class="st">  </span><span class="kw">summarize_at</span>(<span class="kw">vars</span>(HINCP),</span>
+<span id="cb58-4"><a href="describing-distributions-of-variables.html#cb58-4"></a>               <span class="kw">list</span>(<span class="dt">Min. =</span> min,</span>
+<span id="cb58-5"><a href="describing-distributions-of-variables.html#cb58-5"></a>                    <span class="st">&quot;1st Qu.&quot;</span> =<span class="st"> </span><span class="er">~</span><span class="kw">quantile</span>(., <span class="fl">0.25</span>, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),</span>
+<span id="cb58-6"><a href="describing-distributions-of-variables.html#cb58-6"></a>                    <span class="dt">Mean =</span> mean,</span>
+<span id="cb58-7"><a href="describing-distributions-of-variables.html#cb58-7"></a>                    <span class="dt">Median =</span> median,</span>
+<span id="cb58-8"><a href="describing-distributions-of-variables.html#cb58-8"></a>                    <span class="st">&quot;3rd Qu.&quot;</span> =<span class="st"> </span><span class="er">~</span><span class="kw">quantile</span>(., <span class="fl">0.75</span>, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),</span>
+<span id="cb58-9"><a href="describing-distributions-of-variables.html#cb58-9"></a>                    <span class="dt">Max. =</span> max,</span>
+<span id="cb58-10"><a href="describing-distributions-of-variables.html#cb58-10"></a>                    <span class="dt">IQR =</span> IQR,</span>
+<span id="cb58-11"><a href="describing-distributions-of-variables.html#cb58-11"></a>                    <span class="st">&quot;n&quot;</span> =<span class="st"> </span><span class="er">~</span><span class="kw">length</span>(.)),</span>
+<span id="cb58-12"><a href="describing-distributions-of-variables.html#cb58-12"></a>              <span class="dt">na.rm=</span><span class="ot">TRUE</span>) <span class="op">%&gt;%</span></span>
+<span id="cb58-13"><a href="describing-distributions-of-variables.html#cb58-13"></a><span class="st">  </span><span class="kw">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Min.</th>
+<th align="right">1st Qu.</th>
+<th align="right">Mean</th>
+<th align="right">Median</th>
+<th align="right">3rd Qu.</th>
+<th align="right">Max.</th>
+<th align="right">IQR</th>
+<th align="right">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">-4800</td>
+<td align="right">58500</td>
+<td align="right">160302.7</td>
+<td align="right">120000</td>
+<td align="right">205650</td>
+<td align="right">2580000</td>
+<td align="right">147150</td>
+<td align="right">14112</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="describing-distributions-of-variables.html#cb59-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb59-2"><a href="describing-distributions-of-variables.html#cb59-2"></a><span class="st">  </span><span class="kw">summarize_at</span>(<span class="kw">vars</span>(PINCP),</span>
+<span id="cb59-3"><a href="describing-distributions-of-variables.html#cb59-3"></a>               <span class="kw">list</span>(<span class="dt">Min. =</span> min,</span>
+<span id="cb59-4"><a href="describing-distributions-of-variables.html#cb59-4"></a>                    <span class="st">&quot;1st Qu.&quot;</span> =<span class="st"> </span><span class="er">~</span><span class="kw">quantile</span>(., <span class="fl">0.25</span>, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),</span>
+<span id="cb59-5"><a href="describing-distributions-of-variables.html#cb59-5"></a>                    <span class="dt">Mean =</span> mean,</span>
+<span id="cb59-6"><a href="describing-distributions-of-variables.html#cb59-6"></a>                    <span class="dt">Median =</span> median,</span>
+<span id="cb59-7"><a href="describing-distributions-of-variables.html#cb59-7"></a>                    <span class="st">&quot;3rd Qu.&quot;</span> =<span class="st"> </span><span class="er">~</span><span class="kw">quantile</span>(., <span class="fl">0.75</span>, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),</span>
+<span id="cb59-8"><a href="describing-distributions-of-variables.html#cb59-8"></a>                    <span class="dt">Max. =</span> max,</span>
+<span id="cb59-9"><a href="describing-distributions-of-variables.html#cb59-9"></a>                    <span class="dt">IQR =</span> IQR,</span>
+<span id="cb59-10"><a href="describing-distributions-of-variables.html#cb59-10"></a>                    <span class="st">&quot;n&quot;</span> =<span class="st"> </span><span class="er">~</span><span class="kw">length</span>(.)),</span>
+<span id="cb59-11"><a href="describing-distributions-of-variables.html#cb59-11"></a>              <span class="dt">na.rm=</span><span class="ot">TRUE</span>) <span class="op">%&gt;%</span></span>
+<span id="cb59-12"><a href="describing-distributions-of-variables.html#cb59-12"></a><span class="st">  </span><span class="kw">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Min.</th>
+<th align="right">1st Qu.</th>
+<th align="right">Mean</th>
+<th align="right">Median</th>
+<th align="right">3rd Qu.</th>
+<th align="right">Max.</th>
+<th align="right">IQR</th>
+<th align="right">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">-4800</td>
+<td align="right">8800</td>
+<td align="right">68777.9</td>
+<td align="right">36900</td>
+<td align="right">90000</td>
+<td align="right">1325300</td>
+<td align="right">81200</td>
+<td align="right">35638</td>
+</tr>
+</tbody>
+</table>
+<p>The results:</p>
+<ul>
+<li>The lowest household income was negative.</li>
+<li>25% of households made less than 56 thousand approximately.</li>
+<li>Half of households make less than 120 thousand.</li>
+<li>75% of households make less than 205 thousand.</li>
+</ul>
+<p>These numbers are displayed on a boxplot with vertical lines that form a box. The boxplot is also useful since it easy to see outliers. The dark line on the left is the median at $120,000. The circles off on the right are probable outliers past the “normal maximum” of about 500 thousand.</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="describing-distributions-of-variables.html#cb60-1"></a>mydata_clean <span class="op">%&gt;%</span></span>
+<span id="cb60-2"><a href="describing-distributions-of-variables.html#cb60-2"></a><span class="co">#  distinct(SERIALNO, HINCP) %&gt;%</span></span>
+<span id="cb60-3"><a href="describing-distributions-of-variables.html#cb60-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span><span class="dv">0</span>, <span class="dt">y=</span>WAGP)) <span class="op">+</span></span>
+<span id="cb60-4"><a href="describing-distributions-of-variables.html#cb60-4"></a><span class="st">    </span><span class="kw">geom_boxplot</span>() <span class="op">+</span></span>
+<span id="cb60-5"><a href="describing-distributions-of-variables.html#cb60-5"></a><span class="st">    </span><span class="kw">coord_flip</span>() <span class="op">+</span></span>
+<span id="cb60-6"><a href="describing-distributions-of-variables.html#cb60-6"></a><span class="st">    </span><span class="kw">scale_y_continuous</span>(<span class="dt">labels =</span> scales<span class="op">::</span>comma) <span class="op">+</span></span>
+<span id="cb60-7"><a href="describing-distributions-of-variables.html#cb60-7"></a><span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&quot;Total household income&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-45-1.png" width="480" style="display: block; margin: auto;" /></p>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-and-data-management.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="relationships-between-variables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
